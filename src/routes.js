@@ -7,6 +7,11 @@ import NotFoundPage from './pages/not-found.vue';
 import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
 
+import CategoryPage from './pages/category.vue';
+import ExplorePage from './pages/explore.vue';
+import CartPage from './pages/cart.vue';
+import AccountPage from './pages/account.vue';
+
 export default [
   {
     path: '/',
@@ -31,6 +36,22 @@ export default [
   {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage,
+  },
+  {
+    path: '/category/',
+    component: CategoryPage,
+  },
+  {
+    path: '/explore/',
+    component: ExplorePage,
+  },
+  {
+    path: '/cart/',
+    component: CartPage,
+  },
+  {
+    path: '/account/',
+    component: AccountPage,
   },
   {
     path: '(.*)',

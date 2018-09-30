@@ -1,1 +1,29 @@
-/* Your app styles here */
+.ios .navbar,
+.ios .toolbar {
+  background: #fff;
+}
+.ios .tabbar-labels a.link {
+  padding-top: 1px;
+}
+.ios .toolbar a.link {
+  line-height: 4px;
+}
+.ios .tabbar-labels a.link i + span {
+  font-size: 1rem;
+}
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+  /*1rem=12px*/
+}
+@media screen and (min-width: 321px) and (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 751px) {
+  html {
+    font-size: 16px;
+  }
+}

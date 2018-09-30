@@ -1,6 +1,10 @@
 <template>
   <f7-page>
     <f7-navbar title="Form" back-link="Back"></f7-navbar>
+    <!--<f7-toolbar no-toolbar-through>
+      <f7-link>Left</f7-link>
+      <f7-link>Right</f7-link>
+    </f7-toolbar>-->
     <f7-block-title>Form Example</f7-block-title>
     <f7-list form>
       <f7-list-item>
