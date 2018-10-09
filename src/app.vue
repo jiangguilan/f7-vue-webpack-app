@@ -85,6 +85,13 @@ export default {
         routes: routes,
       },
     }
-  }
+  },
+  methods:{
+
+  },
+  mounted() {
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    console.log(document.documentElement.clientWidth / 7.5 + 'px')
+  },
 }
 </script>
