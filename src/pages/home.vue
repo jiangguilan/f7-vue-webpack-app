@@ -5,7 +5,7 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
       <!--<f7-nav-title>My App</f7-nav-title>-->
-      <form class="searchbar searchbar-enabled"  @submit.prevent action="#">
+      <form id="home-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
         <div class="searchbar-inner">
           <div class="searchbar-input-wrap">
             <input class="search_input" ref="input"  
@@ -18,45 +18,13 @@
           </div>
           <span class="searchbar-disable-button" @click="delInput">Cancel</span>
         </div>
-        
       </form>
-      
-      <!--<f7-nav-right>-->
+      <f7-nav-right>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
       </f7-nav-right>
     </f7-navbar>
-    <!--search test-->
-    <input @keypress="onKeypress" type="serch" placeholder="搜索商品">
-
-    <f7-searchbar
-        cancel-link="Cancel"
-        search-list="#search-list"
-        placeholder="Search in items"
-        :clear-button="true"
-        :customSearch="true"
-        @searchbar:search="onSearch"
-        @searchbar:enable="onEnable"
-        @searchbar:disable="onDisable"
-        @searchbar:clear="onClear"
-        @blur="onBlur"
-        @keypress="onKeypress"
-      >
-    </f7-searchbar>
-    
-
     <!--遮罩层-->
     <div class="searchbar-backdrop"></div>
-
-    <f7-list class="searchbar-not-found">
-      <f7-list-item title="Nothing found"></f7-list-item>
-    </f7-list>
-    <f7-list class="searchbar-overlay">
-      <f7-list-item></f7-list-item>
-    </f7-list>
-    <!-- Search-through list -->
-    <f7-list class="searchbar-found" id="search-list">
-      <f7-list-item v-for="item in items" :title="'Item ' + item" :key="item"></f7-list-item>
-    </f7-list>
     <f7-block strong>
       <p>Here is your blank Framework7 app. Let's see what we have here.</p>
     </f7-block>
@@ -97,32 +65,9 @@
 export default {
     data: function () {
       return {
-        items: (function () {
-          var it = [];
-          for (var i = 0; i < 3; i++) it.push(i+1);
-          return it;
-        })()
       }
     },
     methods: {
-      onSearch: function (event,query, found) {
-        // console.log('search', query,1,found,query.params.value);
-        console.log(found)
-        // if (event.keyCode == 13) { //如果按的是enter键 13是enter           
-        //   event.preventDefault(); //禁止默认事件（默认是换行）           
-        //   console.log(event.target.value)          
-        //   // Toast("点击了确认")       
-        // } 
-      },
-      onClear: function (event) {
-        console.log('clear');
-      },
-      onEnable: function (event) {
-        console.log('enable');
-      },
-      onDisable: function (event) {
-        console.log('disable');
-      },
       onKeypress: function (event) {
         if (event.keyCode == 13) { //如果按的是enter键 13是enter           
           event.preventDefault(); //禁止默认事件（默认是换行）           
@@ -133,22 +78,22 @@ export default {
       onFocus: function () {
         var $$=this.Dom7;
         $$(".searchbar-backdrop").addClass("searchbar-backdrop-in")
-        // $$(".searchbar-disable-button").css({display: "block", "margin-right": 0})
-        // $$(".searchbar-disable-button").animate({display: "block", "margin-right": 0},500)
         $$(".searchbar-disable-button").addClass("searchbar-disable-button-in")
         $$(".searchbar-disable-button").removeClass("searchbar-disable-button-out")
       },
       onBlur: function () {
         var $$=this.Dom7;
         $$(".searchbar-backdrop").removeClass("searchbar-backdrop-in")
-        // $$(".searchbar-disable-button").css({display: "none", "margin-right": 0})
-        // $$(".searchbar-disable-button").animate({display: "none", "margin-right": -54},500)
         $$(".searchbar-disable-button").addClass("searchbar-disable-button-out")
         $$(".searchbar-disable-button").removeClass("searchbar-disable-button-in")
       },
       delInput: function () {
         $$(".search_input").val("")
       },
+    },
+    mounted: function () {
+      var $$=this.Dom7;
+      $$("#category-searchbar").css("display","none")
     }
   }
 </script>
