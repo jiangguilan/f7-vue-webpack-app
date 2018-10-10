@@ -5,7 +5,30 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
       <!--<f7-nav-title>My App</f7-nav-title>-->
-      <f7-searchbar
+      <form class="searchbar searchbar-enabled"  @submit.prevent action="#">
+        <div class="searchbar-inner">
+          <div class="searchbar-input-wrap">
+            <input class="search_input" ref="input"  
+              @focus="onFocus"
+              @blur="onBlur"
+              @keypress="onKeypress" 
+              placeholder="商品名称" type="search" />
+            <i class="searchbar-icon"></i>
+            <span class="input-clear-button"></span>
+          </div>
+          <span class="searchbar-disable-button">Cancel</span>
+        </div>
+        
+      </form>
+      
+      <!--<f7-nav-right>-->
+        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+      </f7-nav-right>
+    </f7-navbar>
+    <!--search test-->
+    <input @keypress="onKeypress" type="serch" placeholder="搜索商品">
+
+    <f7-searchbar
         cancel-link="Cancel"
         search-list="#search-list"
         placeholder="Search in items"
@@ -16,18 +39,13 @@
         @searchbar:disable="onDisable"
         @searchbar:clear="onClear"
         @blur="onblur"
-      ></f7-searchbar>
-      <f7-nav-right>
-        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
-      </f7-nav-right>
-    </f7-navbar>
-    <!--search test-->
-    <input @keypress="onKeypress" type="serch" placeholder="搜索商品">
-    <form  @submit.prevent action="#">
-        <input class="search_input" ref="input"  
-          @keypress="onKeypress" 
-          placeholder="商品名称" type="search" />
-    </form>
+        @keypress="onKeypress"
+      >
+    </f7-searchbar>
+    
+
+    <!--遮罩层-->
+    <div class="searchbar-backdrop"></div>
 
     <f7-list class="searchbar-not-found">
       <f7-list-item title="Nothing found"></f7-list-item>
@@ -112,8 +130,15 @@ export default {
             // Toast("点击了确认")       
         }
       },
-      onblur: function () {
-        console.log(121212)
+      onFocus: function () {
+        var $$=this.Dom7;
+        $$(".searchbar-backdrop").addClass("searchbar-backdrop-in")
+        $$(".searchbar-disable-button").css({display: "block", "margin-right": 0})
+      },
+      onBlur: function () {
+        var $$=this.Dom7;
+        $$(".searchbar-backdrop").removeClass("searchbar-backdrop-in")
+        $$(".searchbar-disable-button").css({display: "none", "margin-right": 0})
       },
     }
   }
