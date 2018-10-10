@@ -16,7 +16,7 @@
             <i class="searchbar-icon"></i>
             <span class="input-clear-button"></span>
           </div>
-          <span class="searchbar-disable-button">Cancel</span>
+          <span class="searchbar-disable-button" @click="delInput">Cancel</span>
         </div>
         
       </form>
@@ -38,7 +38,7 @@
         @searchbar:enable="onEnable"
         @searchbar:disable="onDisable"
         @searchbar:clear="onClear"
-        @blur="onblur"
+        @blur="onBlur"
         @keypress="onKeypress"
       >
     </f7-searchbar>
@@ -133,12 +133,21 @@ export default {
       onFocus: function () {
         var $$=this.Dom7;
         $$(".searchbar-backdrop").addClass("searchbar-backdrop-in")
-        $$(".searchbar-disable-button").css({display: "block", "margin-right": 0})
+        // $$(".searchbar-disable-button").css({display: "block", "margin-right": 0})
+        // $$(".searchbar-disable-button").animate({display: "block", "margin-right": 0},500)
+        $$(".searchbar-disable-button").addClass("searchbar-disable-button-in")
+        $$(".searchbar-disable-button").removeClass("searchbar-disable-button-out")
       },
       onBlur: function () {
         var $$=this.Dom7;
         $$(".searchbar-backdrop").removeClass("searchbar-backdrop-in")
-        $$(".searchbar-disable-button").css({display: "none", "margin-right": 0})
+        // $$(".searchbar-disable-button").css({display: "none", "margin-right": 0})
+        // $$(".searchbar-disable-button").animate({display: "none", "margin-right": -54},500)
+        $$(".searchbar-disable-button").addClass("searchbar-disable-button-out")
+        $$(".searchbar-disable-button").removeClass("searchbar-disable-button-in")
+      },
+      delInput: function () {
+        $$(".search_input").val("")
       },
     }
   }
