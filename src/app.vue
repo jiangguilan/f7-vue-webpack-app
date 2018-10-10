@@ -80,11 +80,15 @@ export default {
       f7params: {
         id: 'io.framework7.testapp', // App bundle ID
         name: 'Framework7', // App name
-        theme: 'auto', // Automatic theme detection
+        theme: 'ios', // Automatic theme detection auto ios
         // App routes
         routes: routes,
       },
     }
-  }
+  },
+  mounted() {
+    document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+    // console.log(document.documentElement.style.fontSize,document.documentElement.clientWidth/7.5+'px')
+  },
 }
 </script>
