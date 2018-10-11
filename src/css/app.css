@@ -18,5 +18,6 @@
   transition-duration: 300ms;
 }
 .searchbar-disable-button-out {
+  display: block !important;
   margin-right: -54px;
 }
