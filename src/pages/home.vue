@@ -6,17 +6,6 @@
       </f7-nav-left>
       <!--<f7-nav-title>My App</f7-nav-title>-->
       <form id="home-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
-        <!--BEM
-        .block element miaoshu
-        .block__element--miaoshu
-        .block 个体
-        .block__element 个体上的元素
-        .block__element--miaoshu 个体上的元素的描述
-
-        .person
-        .person__hand
-        .person__hand--long
-        .person--male-->
         <div class="searchbar-inner">
           <div class="searchbar-input-wrap">
             <input class="search_input" ref="input"  
