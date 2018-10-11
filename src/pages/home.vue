@@ -224,7 +224,17 @@ export default {
     mounted: function () {
       var $$=this.Dom7;
       $$("#category-searchbar").css("display","none")
-      // console.log(this.picked)
+      $$(document).on('pageInit', function (e) {
+          var page = e.detail.page;
+          // Code for About page
+          if (page.name === 'home') {
+              console.log(page.name)
+          }
+          // Code for Services page
+          if (page.name === 'services') {
+              myApp.alert('Here comes our services!');
+          }
+      });
     },
     watch: {
       picked: function (newVal,oldVal) {

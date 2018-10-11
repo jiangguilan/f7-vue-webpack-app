@@ -87,8 +87,17 @@ export default {
     }
   },
   mounted() {
-    document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
-    // console.log(document.documentElement.style.fontSize,document.documentElement.clientWidth/7.5+'px')
+    if(document.documentElement.clientWidth >= 640){
+      document.documentElement.style.fontSize=100+'px';
+    }else if(document.documentElement.clientWidth == 414){
+      document.documentElement.style.fontSize=document.documentElement.clientWidth/5.52+'px';
+    }else if(document.documentElement.clientWidth == 375){
+      document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+    }else if(document.documentElement.clientWidth == 320){
+      document.documentElement.style.fontSize=document.documentElement.clientWidth/12.8+'px';
+    }else{
+      document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+    }
   },
 }
 </script>
