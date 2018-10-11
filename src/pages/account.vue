@@ -25,7 +25,7 @@ export default {
     var $$=this.Dom7;
     $$("#home-searchbar").css("display","none")
     $$("#category-searchbar").css("display","none")
-  }
+  } 
 
 }
 </script>

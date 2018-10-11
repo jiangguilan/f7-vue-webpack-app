@@ -18,6 +18,7 @@ import AppStyles from './css/app.css';
 
 // Import App Component
 import App from './app';
+import i18n from './tools/i18ns'
 
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
@@ -25,6 +26,7 @@ Framework7.use(Framework7Vue)
 // Init App
 new Vue({
   el: '#app',
+  i18n,
   template: '<app/>',
 
   // Register App Component

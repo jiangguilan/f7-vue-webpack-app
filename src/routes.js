@@ -11,6 +11,7 @@ import CategoryPage from './pages/category.vue';
 import ExplorePage from './pages/explore.vue';
 import CartPage from './pages/cart.vue';
 import AccountPage from './pages/account.vue';
+import LoginTestLang from './pages/login-test-lang.vue';
 
 export default [
   {
@@ -52,6 +53,10 @@ export default [
   {
     path: '/account/',
     component: AccountPage,
+  },
+  {
+    path: '/login-test-lang/',
+    component: LoginTestLang,
   },
   {
     path: '(.*)',
