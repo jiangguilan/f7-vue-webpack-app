@@ -25,6 +25,39 @@
     </f7-navbar>
     <!--遮罩层-->
     <div class="searchbar-backdrop"></div>
+
+    <f7-searchbar
+      cancel-link="Cancel"
+      search-list="#search-list"
+      placeholder="Search in items"
+      :clear-button="true"
+      :customSearch="true"
+      @searchbar:search="onSearch"
+      @searchbar:enable="onEnable"
+      @searchbar:disable="onDisable"
+      @searchbar:clear="onClear"
+    ></f7-searchbar>
+
+    <!--<form class="searchbar searchbar-enabled" cancel-link="Cancel" search-list="#search-list">
+      <div class="searchbar-inner">
+        <div class="searchbar-input-wrap">
+          <input placeholder="Search in items" type="search" class="input-with-value">
+          <i class="searchbar-icon"></i>
+          <span class="input-clear-button"></span>
+        </div>
+        <span class="searchbar-disable-button" style="margin-right: 0px;">Cancel</span>
+      </div>
+    </form>-->
+    <!-- Will be visible if there is no any results found, defined by "searchbar-not-found" class -->
+    <f7-list class="searchbar-not-found">
+      <f7-list-item title="Nothing found"></f7-list-item>
+    </f7-list>
+
+    <!-- Search-through list -->
+    <f7-list class="searchbar-found" id="search-list">
+      <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
+    </f7-list>
+
     <f7-block strong>
       <p>Here is your blank Framework7 app. Let's see what we have here.</p>
     </f7-block>
@@ -79,6 +112,19 @@
         <!--<button @click="test">获取选中的值</button>-->
       </div>  
     </f7-block>
+    <div class="list">
+      <ul>
+        <li class="" v-for="(item,index) in list" :key="index">
+          <label class="item-content item-radio">
+            <input name="task" type="radio" :value="item.value" :checked="item.isCheck" @change="changeInput(index)">
+            <i class="icon icon-radio"></i>
+            <div class="item-inner">
+              <div class="item-title">{{item.name}}</div>
+            </div>
+          </label>
+        </li>
+      </ul>
+    </div>
   </f7-page>
 </template>
 <script>
@@ -86,10 +132,27 @@ export default {
     data: function () {
       return {
         picked: '',
-        list:[{value:1,isCheck:false,name:'English'},{value:2,isCheck:false,name:'中文'},{value:3,isCheck:false,name:'عربي'}]
+        list:[{value:1,isCheck:false,name:'English'},{value:2,isCheck:false,name:'中文'},{value:3,isCheck:false,name:'عربي'}],
+        items: (function () {
+          var it = [];
+          for (var i = 0; i < 100; i++) it.push(i+1);
+          return it;
+        })(),
       }
     },
     methods: {
+      onSearch: function (query, found) {
+        console.log('search', query);
+      },
+      onClear: function (event) {
+        console.log('clear');
+      },
+      onEnable: function (event) {
+        console.log('enable');
+      },
+      onDisable: function (event) {
+        console.log('disable');
+      },
       onKeypress: function (event) {
         if (event.keyCode == 13) {           
           event.preventDefault();         
