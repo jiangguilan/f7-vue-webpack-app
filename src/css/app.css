@@ -11,20 +11,12 @@
 .ios .tabbar-labels a.link i + span {
   font-size: .24rem;
 }
-.ios .searchbar-disable-button {
-  display: block;
-  margin-right: -72px;
-}
-.ios .searchbar-inner {
-  padding: 0 8px;
-  overflow: hidden;
-}
 .searchbar-disable-button-in {
   display: block !important;
-  margin-right: 0 !important;
+  margin-right: 0;
   -webkit-transition-duration: 300ms;
   transition-duration: 300ms;
 }
 .searchbar-disable-button-out {
-  margin-right: -72px;
+  margin-right: -54px;
 }
