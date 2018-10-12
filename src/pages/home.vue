@@ -57,7 +57,31 @@
     <f7-list class="searchbar-found" id="search-list">
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
     </f7-list>
-
+    <f7-swiper>
+      <f7-swiper-slide>Slide 1</f7-swiper-slide>
+      <f7-swiper-slide>Slide 2</f7-swiper-slide>
+      <f7-swiper-slide>Slide 3</f7-swiper-slide>
+    </f7-swiper>
+    <f7-block strong>
+      <f7-swiper id="banner" pagination next-button prev-button scrollbar :init="true">
+        <f7-swiper-slide><p> Slide 1 </p></f7-swiper-slide>
+        <f7-swiper-slide><p> Slide 2 </p></f7-swiper-slide>
+        <f7-swiper-slide><p> Slide 3 </p></f7-swiper-slide>
+        <f7-swiper-slide><p> Slide 4 </p></f7-swiper-slide>
+        <f7-swiper-slide><p> Slide 5 </p></f7-swiper-slide>
+        <f7-swiper-slide><p> Slide 6 </p></f7-swiper-slide>
+      </f7-swiper>
+    </f7-block>
+    <f7-block strong>
+      <f7-swiper next-button prev-button :params="{speed:500, slidesPerView: 5, spaceBetween: 20}">
+        <f7-swiper-slide>Slide 1</f7-swiper-slide>
+        <f7-swiper-slide>Slide 2</f7-swiper-slide>
+        <f7-swiper-slide>Slide 3</f7-swiper-slide>
+        <f7-swiper-slide>Slide 4</f7-swiper-slide>
+        <f7-swiper-slide>Slide 5</f7-swiper-slide>
+        <f7-swiper-slide>Slide 6</f7-swiper-slide>
+      </f7-swiper>
+    </f7-block>
     <f7-block strong>
       <p>Here is your blank Framework7 app. Let's see what we have here.</p>
     </f7-block>
@@ -135,7 +159,7 @@ export default {
         list:[{value:1,isCheck:false,name:'English'},{value:2,isCheck:false,name:'中文'},{value:3,isCheck:false,name:'عربي'}],
         items: (function () {
           var it = [];
-          for (var i = 0; i < 100; i++) it.push(i+1);
+          for (var i = 0; i < 3; i++) it.push(i+1);
           return it;
         })(),
       }
@@ -219,7 +243,12 @@ export default {
       //       console.log('被选中的值为:'+v.value)
       //     }
       //   })
-      // }
+      // },
+      banner: function () {
+        var $$=this.Dom7;
+        var wrapper=$$($$("#banner").children()[0]);
+        console.log()
+      },
     },
     mounted: function () {
       var $$=this.Dom7;
@@ -235,6 +264,7 @@ export default {
               myApp.alert('Here comes our services!');
           }
       });
+      this.banner()
     },
     watch: {
       picked: function (newVal,oldVal) {
