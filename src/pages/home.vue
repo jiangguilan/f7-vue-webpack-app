@@ -63,7 +63,7 @@
       <f7-swiper-slide>Slide 3</f7-swiper-slide>
     </f7-swiper>
     <f7-block strong>
-      <f7-swiper id="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000},speed:500}">
+      <f7-swiper id="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000},speed:500,disableOnInteraction:false}">
         <f7-swiper-slide><p> Slide 1 </p></f7-swiper-slide>
         <f7-swiper-slide><p> Slide 2 </p></f7-swiper-slide>
         <f7-swiper-slide><p> Slide 3 </p></f7-swiper-slide>
