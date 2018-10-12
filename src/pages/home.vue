@@ -63,7 +63,7 @@
       <f7-swiper-slide>Slide 3</f7-swiper-slide>
     </f7-swiper>
     <f7-block strong>
-      <f7-swiper id="banner" pagination next-button prev-button scrollbar :init="true">
+      <f7-swiper id="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000},speed:500}">
         <f7-swiper-slide><p> Slide 1 </p></f7-swiper-slide>
         <f7-swiper-slide><p> Slide 2 </p></f7-swiper-slide>
         <f7-swiper-slide><p> Slide 3 </p></f7-swiper-slide>
@@ -73,7 +73,7 @@
       </f7-swiper>
     </f7-block>
     <f7-block strong>
-      <f7-swiper next-button prev-button :params="{speed:500, slidesPerView: 5, spaceBetween: 20}">
+      <f7-swiper next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 1, spaceBetween: 20}">
         <f7-swiper-slide>Slide 1</f7-swiper-slide>
         <f7-swiper-slide>Slide 2</f7-swiper-slide>
         <f7-swiper-slide>Slide 3</f7-swiper-slide>
@@ -82,6 +82,23 @@
         <f7-swiper-slide>Slide 6</f7-swiper-slide>
       </f7-swiper>
     </f7-block>
+    <f7-badge color="red">5</f7-badge>
+    <f7-button>Button Text</f7-button>
+    <!--<f7-buttons>
+      <f7-button>Button 1</f7-button>
+      <f7-button>Button 2</f7-button>
+      <f7-button>Button 3</f7-button>
+    </f7-buttons>-->
+    <!-- Tabs -->
+    <!--<f7-tabs>
+      <f7-tab id="tab-1" active>Tab 1</f7-tab>
+      <f7-tab id="tab-2">Tab 2</f7-tab>
+    </f7-tabs>-->
+    <!-- Switch Between Tabs -->
+    <!--<f7-buttons>
+      <f7-button tab-link="#tab-1" active>Button 1</f7-button>
+      <f7-button tab-link="#tab-2">Button 2</f7-button>
+    </f7-buttons>-->
     <f7-block strong>
       <p>Here is your blank Framework7 app. Let's see what we have here.</p>
     </f7-block>
@@ -201,6 +218,7 @@ export default {
         $$(".searchbar-disable-button").removeClass("searchbar-disable-button-in")
       },
       delInput: function () {
+        var $$=this.Dom7;
         $$(".search_input").val("")
       },
       langToggle(){
@@ -252,7 +270,8 @@ export default {
     },
     mounted: function () {
       var $$=this.Dom7;
-      $$("#category-searchbar").css("display","none")
+      // $$("#home-searchbar").css("display","block")
+      // $$("#category-searchbar").css("display","none")
       $$(document).on('pageInit', function (e) {
           var page = e.detail.page;
           // Code for About page

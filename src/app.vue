@@ -87,6 +87,8 @@ export default {
     }
   },
   mounted() {
+    var $$=this.Dom7;
+    console.log($$(document))
     if(document.documentElement.clientWidth >= 640){
       document.documentElement.style.fontSize=100+'px';
     }else if(document.documentElement.clientWidth == 414){
