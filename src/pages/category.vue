@@ -1,5 +1,5 @@
 <template>
-  <f7-page no-tabbar>
+  <f7-page name="category" no-tabbar>
     <f7-navbar back-link="Back">
       <form id="category-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
         <div class="searchbar-inner">
@@ -77,6 +77,12 @@ export default {
     var $$=this.Dom7;
     // $$("#home-searchbar").css("display","none")
     // $$("#category-searchbar").css("display","block")
+    var url=this.$f7route.url,
+      path=this.$f7route.path,
+      hash=this.$f7route.hash,
+      route=this.$f7route.route;
+    console.log(url,path,hash,route)
+    console.log(2,window.location.pathname)
   },
 }
 </script>

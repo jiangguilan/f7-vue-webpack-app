@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page name="cart">
     <f7-navbar title="Cart" back-link="Back"></f7-navbar>
     <f7-block-title>About My App</f7-block-title>
     <f7-block strong>

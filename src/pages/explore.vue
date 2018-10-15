@@ -1,8 +1,10 @@
 <template>
-  <f7-page>
+  <f7-page name="explore">
     <f7-navbar title="Explore" back-link="Back"></f7-navbar>
     <f7-block-title>About My App</f7-block-title>
     <f7-block strong>
+      
+      {{$f7route.url}}
       <p>Here is About page!</p>
       <p>You can go <f7-link back>back</f7-link>.</p>
       <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>

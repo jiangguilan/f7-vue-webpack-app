@@ -1,5 +1,5 @@
 <template>
-  <f7-page toolbar-through>
+  <f7-page name="home" pull-to-refresh @ptr:refresh="onRefresh">
     <f7-navbar>
       <f7-nav-left>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
@@ -57,6 +57,9 @@
     <f7-list class="searchbar-found" id="search-list">
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
     </f7-list>
+    <f7-block>
+      {{$f7route.url}}
+    </f7-block>
     <f7-swiper>
       <f7-swiper-slide>Slide 1</f7-swiper-slide>
       <f7-swiper-slide>Slide 2</f7-swiper-slide>
@@ -262,33 +265,38 @@ export default {
       //     }
       //   })
       // },
-      banner: function () {
-        var $$=this.Dom7;
-        var wrapper=$$($$("#banner").children()[0]);
-        console.log()
+      onRefresh: function () {
+        console.log("reflash")
+        // mainView.router.refreshPage()
       },
     },
     mounted: function () {
       var $$=this.Dom7;
       // $$("#home-searchbar").css("display","block")
       // $$("#category-searchbar").css("display","none")
-      $$(document).on('pageInit', function (e) {
-          var page = e.detail.page;
-          // Code for About page
-          if (page.name === 'home') {
-              console.log(page.name)
-          }
-          // Code for Services page
-          if (page.name === 'services') {
-              myApp.alert('Here comes our services!');
-          }
-      });
-      this.banner()
+      // $$(document).on('pageInit', function (e) {
+      //     var page = e.detail.page;
+      //     // Code for About page
+      //     if (page.name === 'home') {
+      //         console.log(page.name)
+      //     }
+      //     // Code for Services page
+      //     if (page.name === 'services') {
+      //         myApp.alert('Here comes our services!');
+      //     }
+      // });
+      // this.banner()
+      // $$.router.load({pageName: 'cart'});
+      var url=this.$f7route.url,
+        path=this.$f7route.path,
+        hash=this.$f7route.hash,
+        route=this.$f7route.route;
+      // console.log(url,path,hash,route)
     },
     watch: {
-      picked: function (newVal,oldVal) {
-        console.log(newVal,oldVal)
-      }
+      // picked: function (newVal,oldVal) {
+      //   console.log(newVal,oldVal)
+      // }
     },
   }
 </script>

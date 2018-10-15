@@ -18,6 +18,7 @@
     <!-- Main View -->
     <f7-view id="main-view" url="/" main >
      <!--toolbar-through :dynamic-navbar="true"-->
+     <!--<router-view></router-view>-->
       <f7-toolbar labels>
         <f7-link href="/" icon-f7="home" text="Home"></f7-link>
         <f7-link href="/category/" icon-f7="data" text="Category"></f7-link>
@@ -74,7 +75,7 @@
 import routes from './routes.js'
 
 export default {
-  data() {
+  data:function() {
     return {
       // Framework7 parameters here
       f7params: {
@@ -86,20 +87,64 @@ export default {
       },
     }
   },
-  mounted() {
-    var $$=this.Dom7;
-    console.log($$(document))
-    if(document.documentElement.clientWidth >= 640){
-      document.documentElement.style.fontSize=100+'px';
-    }else if(document.documentElement.clientWidth == 414){
-      document.documentElement.style.fontSize=document.documentElement.clientWidth/5.52+'px';
-    }else if(document.documentElement.clientWidth == 375){
-      document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
-    }else if(document.documentElement.clientWidth == 320){
-      document.documentElement.style.fontSize=document.documentElement.clientWidth/12.8+'px';
-    }else{
-      document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
-    }
+  methods: {
+    routeLink: function () {
+      var $$=this.Dom7;
+      // var url=this.$f7route.url,
+      //   path=this.$f7route.path,
+      //   hash=this.$f7route.hash,
+      //   route=this.$f7route.route;
+      // console.log(url,path,hash,route)
+      // console.log($$(document))
+      // console.log(4,window.location.pathname)
+      // var query = $$.parseUrlQuery('http://google.com/?id=5&foo=bar');
+      console.log(5,window.location)
+      if(window.location.pathname == '/'){
+        console.log('/home')
+        
+      }
+      else if(window.location.pathname == '/category'){
+        console.log('/category')
+        window.location.href=window.location.host+'/category';
+        // $$(window).attr('href','/category')
+      }
+      else if(window.location.pathname == '/explore'){
+        console.log('/explore')
+      }
+      else if(window.location.pathname == '/cart'){
+        console.log('/cart')
+      }
+      else if(window.location.pathname == '/account'){
+        console.log('/account')
+      }
+    },
+    fontSize: function () {
+      var $$=this.Dom7;
+      // console.log($$(document))
+      if(document.documentElement.clientWidth >= 640){
+        document.documentElement.style.fontSize=100+'px';
+      }else if(document.documentElement.clientWidth == 414){
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/5.52+'px';
+      }else if(document.documentElement.clientWidth == 375){
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+      }else if(document.documentElement.clientWidth == 320){
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/12.8+'px';
+      }else{
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
+      }
+    },
+  },
+  beforemount:function () {
+    // this.routeLink()
+  },
+  mounted:function () {
+    this.fontSize()
+    this.routeLink()
   },
 }
+
+// Framework7.onPageInit('home', function (page) {
+//   console.log('home page initialized');
+//   console.log(page);
+// });
 </script>

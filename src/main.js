@@ -7,13 +7,17 @@ import Framework7 from 'framework7/framework7.esm.bundle.js';
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js';
 
+// import Routes from './routes.js'
+
 // Import F7 Styles
 import Framework7Styles from 'framework7/css/framework7.css';
-// import RTLStyles from 'framework7/css/framework7.rtl.ios.min.css';
+import RTLStyles from 'framework7/css/framework7.rtl.ios.min.css';
 
 // Import Icons and App Custom Styles
 import IconsStyles from './css/icons.css';
 import AppStyles from './css/app.css';
+
+// import Router from 'vue-router';
 
 
 // Import App Component
@@ -22,6 +26,11 @@ import i18n from './tools/i18ns'
 
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
+// Vue.use(Framework7Vue)
+// Vue.use(Router)
+
+
+
 
 // Init App
 new Vue({
