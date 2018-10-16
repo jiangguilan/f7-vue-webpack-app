@@ -95,27 +95,27 @@ export default {
       //   hash=this.$f7route.hash,
       //   route=this.$f7route.route;
       // console.log(url,path,hash,route)
-      // console.log($$(document))
-      // console.log(4,window.location.pathname)
-      // var query = $$.parseUrlQuery('http://google.com/?id=5&foo=bar');
       console.log(5,window.location)
       if(window.location.pathname == '/'){
         console.log('/home')
-        
+        this.$f7.router.navigate('/');
       }
       else if(window.location.pathname == '/category'){
         console.log('/category')
-        window.location.href=window.location.host+'/category';
+        this.$f7.router.navigate('/category/');
         // $$(window).attr('href','/category')
       }
       else if(window.location.pathname == '/explore'){
         console.log('/explore')
+        this.$f7.router.navigate('/explore/');
       }
       else if(window.location.pathname == '/cart'){
         console.log('/cart')
+        this.$f7.router.navigate('/cart/');
       }
       else if(window.location.pathname == '/account'){
         console.log('/account')
+        this.$f7.router.navigate('/account/');
       }
     },
     fontSize: function () {
@@ -142,9 +142,4 @@ export default {
     this.routeLink()
   },
 }
-
-// Framework7.onPageInit('home', function (page) {
-//   console.log('home page initialized');
-//   console.log(page);
-// });
 </script>

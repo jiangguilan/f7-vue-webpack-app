@@ -11,7 +11,7 @@ import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js';
 
 // Import F7 Styles
 import Framework7Styles from 'framework7/css/framework7.css';
-import RTLStyles from 'framework7/css/framework7.rtl.ios.min.css';
+// import RTLStyles from 'framework7/css/framework7.rtl.ios.min.css';
 
 // Import Icons and App Custom Styles
 import IconsStyles from './css/icons.css';
