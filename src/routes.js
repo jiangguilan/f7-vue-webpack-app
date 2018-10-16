@@ -12,6 +12,7 @@ import ExplorePage from './pages/explore.vue';
 import CartPage from './pages/cart.vue';
 import AccountPage from './pages/account.vue';
 import LoginTestLang from './pages/login-test-lang.vue';
+import DetailsPage from './pages/details.vue';
 
 export default [
   {
@@ -57,6 +58,10 @@ export default [
   {
     path: '/login-test-lang/',
     component: LoginTestLang,
+  },
+  {
+    path: '/details/',
+    component: DetailsPage,
   },
   {
     path: '(.*)',

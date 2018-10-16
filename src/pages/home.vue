@@ -274,24 +274,7 @@ export default {
       var $$=this.Dom7;
       // $$("#home-searchbar").css("display","block")
       // $$("#category-searchbar").css("display","none")
-      // $$(document).on('pageInit', function (e) {
-      //     var page = e.detail.page;
-      //     // Code for About page
-      //     if (page.name === 'home') {
-      //         console.log(page.name)
-      //     }
-      //     // Code for Services page
-      //     if (page.name === 'services') {
-      //         myApp.alert('Here comes our services!');
-      //     }
-      // });
-      // this.banner()
-      // $$.router.load({pageName: 'cart'});
-      var url=this.$f7route.url,
-        path=this.$f7route.path,
-        hash=this.$f7route.hash,
-        route=this.$f7route.route;
-      // console.log(url,path,hash,route)
+      // console.log(13,this)
     },
     watch: {
       // picked: function (newVal,oldVal) {

@@ -74,6 +74,7 @@
 // Import Routes
 import routes from './routes.js'
 
+
 export default {
   data:function() {
     return {
@@ -84,6 +85,11 @@ export default {
         theme: 'ios', // Automatic theme detection auto ios
         // App routes
         routes: routes,
+        swipeBackPage: true,//滑动返回
+        animatePages:true,
+        // pushStateNoAnimation:true,
+        swipeBackPageThreshold:100,//滑动返回响应距离
+        // smartSelectSearchbar: true,//启用搜索
       },
     }
   },
@@ -95,28 +101,14 @@ export default {
       //   hash=this.$f7route.hash,
       //   route=this.$f7route.route;
       // console.log(url,path,hash,route)
-      console.log(5,window.location)
-      if(window.location.pathname == '/'){
-        console.log('/home')
-        this.$f7.router.navigate('/');
-      }
-      else if(window.location.pathname == '/category'){
-        console.log('/category')
-        this.$f7.router.navigate('/category/');
-        // $$(window).attr('href','/category')
-      }
-      else if(window.location.pathname == '/explore'){
-        console.log('/explore')
-        this.$f7.router.navigate('/explore/');
-      }
-      else if(window.location.pathname == '/cart'){
-        console.log('/cart')
-        this.$f7.router.navigate('/cart/');
-      }
-      else if(window.location.pathname == '/account'){
-        console.log('/account')
-        this.$f7.router.navigate('/account/');
-      }
+      this.$f7.router.navigate(window.location.pathname+'/');
+      console.log(12,window.location)
+      // if(window.location.pathname != '/'){
+      //   this.f7params.animatePages==false;
+      //   console.log(13,this.f7params.animatePages)
+      // }
+      // console.log(12,this.f7params.animatePages)
+      
     },
     fontSize: function () {
       var $$=this.Dom7;
