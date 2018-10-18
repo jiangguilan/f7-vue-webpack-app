@@ -19,12 +19,21 @@ export default {
     }
   },
   methods: {
-
+    
+    isEmptyObject:function (e) {
+      var t;
+      for (t in e)
+        return !1;
+      return !0
+    }
   },
   mounted: function () {
     var $$=this.Dom7;
     $$("#home-searchbar").css("display","none")
     $$("#category-searchbar").css("display","none")
+    console.log(this.$f7route,this.$f7route.params)
+    
+console.log(this.isEmptyObject(this.$f7route.params));	
   }
 }
 </script>

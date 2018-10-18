@@ -60,6 +60,10 @@ export default [
     component: LoginTestLang,
   },
   {
+    path: '/details/',
+    component: DetailsPage,
+  },
+  {
     path: '/details/:product/user/:user',
     component: DetailsPage,
   },
