@@ -5,7 +5,7 @@
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
       </f7-nav-left>
       <!--<f7-nav-title>My App</f7-nav-title>-->
-      <form id="home-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
+      <!--<form id="home-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
         <div class="searchbar-inner">
           <div class="searchbar-input-wrap">
             <input class="search_input" ref="input"  
@@ -18,7 +18,18 @@
           </div>
           <span class="searchbar-disable-button" @click="delInput">Cancel</span>
         </div>
-      </form>
+      </form>-->
+      <f7-searchbar
+        cancel-link="Cancel"
+        placeholder="Search in items"
+        :clear-button="true"
+        :customSearch="true"
+        id="home-searchbar"
+        @searchbar:search="onSearch"
+        @searchbar:enable="onEnable"
+        @searchbar:disable="onDisable"
+        @searchbar:clear="onClear"
+      ></f7-searchbar>
       <f7-nav-right>
         <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
       </f7-nav-right>
@@ -26,18 +37,12 @@
     <!--遮罩层-->
     <div class="searchbar-backdrop"></div>
 
-    <f7-searchbar
-      cancel-link="Cancel"
-      search-list="#search-list"
-      placeholder="Search in items"
-      :clear-button="true"
-      :customSearch="true"
-      @searchbar:search="onSearch"
-      @searchbar:enable="onEnable"
-      @searchbar:disable="onDisable"
-      @searchbar:clear="onClear"
-    ></f7-searchbar>
-
+    
+    <f7-block id="searchContent">
+      xxxx
+    </f7-block>
+    <f7-link href="/details/P001200/user/1" text="details"></f7-link>
+    <f7-link href="/details/P001200" text="details/P001200"></f7-link>
     <!--<form class="searchbar searchbar-enabled" cancel-link="Cancel" search-list="#search-list">
       <div class="searchbar-inner">
         <div class="searchbar-input-wrap">
@@ -186,16 +191,19 @@ export default {
     },
     methods: {
       onSearch: function (query, found) {
-        console.log('search', query);
+        // console.log('search', query);
+        //发生到后端
       },
       onClear: function (event) {
         console.log('clear');
       },
       onEnable: function (event) {
         console.log('enable');
+        this.$$('#searchContent').show();
       },
       onDisable: function (event) {
         console.log('disable');
+        this.$$('#searchContent').hide();
       },
       onKeypress: function (event) {
         if (event.keyCode == 13) {           
@@ -272,9 +280,15 @@ export default {
     },
     mounted: function () {
       var $$=this.Dom7;
-      // $$("#home-searchbar").css("display","block")
-      // $$("#category-searchbar").css("display","none")
+      $$("#home-searchbar").css("display","block")
+      $$("#category-searchbar").css("display","none")
       // console.log(13,this)
+      $$('#home-searchbar input[type=search]').on('keyup',function(event){
+        if (event.keyCode == 13) {           
+          event.preventDefault();         
+          console.log(111,event.target.value) 
+        }
+      })
     },
     watch: {
       // picked: function (newVal,oldVal) {

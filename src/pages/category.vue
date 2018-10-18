@@ -1,7 +1,7 @@
 <template>
   <f7-page name="category" no-tabbar>
     <f7-navbar back-link="Back">
-      <form id="category-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
+      <!--<form id="category-searchbar" class="searchbar searchbar-enabled"  @submit.prevent action="#">
         <div class="searchbar-inner">
           <div class="searchbar-input-wrap">
             <input class="search_input" ref="input"  
@@ -15,7 +15,18 @@
           <span class="searchbar-disable-button" @click="delInput">Cancel</span>
         </div>
         
-      </form>
+      </form>-->
+      <f7-searchbar
+        cancel-link="Cancel"
+        placeholder="Search in items"
+        :clear-button="true"
+        :customSearch="true"
+        id="category-searchbar"
+        @searchbar:search="onSearch"
+        @searchbar:enable="onEnable"
+        @searchbar:disable="onDisable"
+        @searchbar:clear="onClear"
+      ></f7-searchbar>
     </f7-navbar>
     <!--<f7-block-title>About My App</f7-block-title>-->
     
@@ -50,39 +61,38 @@ export default {
     return {}
   },
   methods: {
-      onKeypress: function (event) {
-        if (event.keyCode == 13) { //如果按的是enter键 13是enter           
-          event.preventDefault(); //禁止默认事件（默认是换行）           
-          console.log(event.target.value)          
-            // Toast("点击了确认")       
-        }
+      onSearch: function (query, found) {
+        // console.log('search', query);
+        //发生到后端
       },
-      onFocus: function () {
-        var $$=this.Dom7;
-        $$(".searchbar-backdrop").addClass("searchbar-backdrop-in")
-        $$(".searchbar-disable-button").addClass("searchbar-disable-button-in")
-        $$(".searchbar-disable-button").removeClass("searchbar-disable-button-out")
+      onClear: function (event) {
+        console.log('clear');
       },
-      onBlur: function () {
-        var $$=this.Dom7;
-        $$(".searchbar-backdrop").removeClass("searchbar-backdrop-in")
-        $$(".searchbar-disable-button").addClass("searchbar-disable-button-out")
-        $$(".searchbar-disable-button").removeClass("searchbar-disable-button-in")
+      onEnable: function (event) {
+        console.log('enable');
+        this.$$('#searchContent').show();
       },
-      delInput: function () {
-        $$(".search_input").val("")
+      onDisable: function (event) {
+        console.log('disable');
+        this.$$('#searchContent').hide();
       },
   },
   mounted: function () {
     var $$=this.Dom7;
-    // $$("#home-searchbar").css("display","none")
-    // $$("#category-searchbar").css("display","block")
+    $$("#home-searchbar").css("display","none")
+    $$("#category-searchbar").css("display","block")
     var url=this.$f7route.url,
       path=this.$f7route.path,
       hash=this.$f7route.hash,
       route=this.$f7route.route;
-    console.log(url,path,hash,route)
-    console.log(2,window.location.pathname)
+    // console.log(url,path,hash,route)
+    // console.log(2,window.location.pathname)
+    $$('#category-searchbar input[type=search]').on('keyup',function(event){
+      if (event.keyCode == 13) {           
+        event.preventDefault();         
+        console.log(111,event.target.value) 
+      }
+    })
   },
 }
 </script>

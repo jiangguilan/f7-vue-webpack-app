@@ -12,5 +12,19 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: function () {
+    return {
+
+    }
+  },
+  methods: {
+
+  },
+  mounted: function () {
+    var $$=this.Dom7;
+    $$("#home-searchbar").css("display","none")
+    $$("#category-searchbar").css("display","none")
+  }
+}
 </script>

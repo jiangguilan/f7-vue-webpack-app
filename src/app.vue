@@ -102,11 +102,10 @@ export default {
       //   route=this.$f7route.route;
       // console.log(url,path,hash,route)
       this.$f7.router.navigate(window.location.pathname+'/');
-      console.log(12,window.location)
-      // if(window.location.pathname != '/'){
-      //   this.f7params.animatePages==false;
-      //   console.log(13,this.f7params.animatePages)
-      // }
+      // console.log(12,window.location)
+      if(window.location.pathname != '/'){
+        console.log(1389)
+      }
       // console.log(12,this.f7params.animatePages)
       
     },
