@@ -29,8 +29,8 @@ export default {
   },
   mounted: function () {
     var $$=this.Dom7;
-    // $$("#home-searchbar").css("display","none")
-    // $$("#category-searchbar").css("display","none")
+    $$("#home-searchbar").css("display","none")
+    $$("#category-searchbar").css("display","none")
     console.log(this.$f7route,this.$f7route.params)
     
     console.log(this.isEmptyObject(this.$f7route.params));

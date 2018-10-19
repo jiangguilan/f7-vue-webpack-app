@@ -101,18 +101,18 @@ export default {
       // console.log(url,path,hash,route)
       this.$f7.router.navigate(window.location.pathname+'/');
       console.log(12,window.location)
-      if(window.location.pathname == '/'){
-        $$("#home-searchbar").css("display","block")
-      }
-      else{
-        $$("#home-searchbar").css("display","none")
-      }
-      if(window.location.pathname == '/category'){
-        $$("#category-searchbar").css("display","block")
-      }
-      else{
-        $$("#category-searchbar").css("display","none")
-      }
+      // if(window.location.pathname == '/'){
+      //   $$("#home-searchbar").css("display","block")
+      // }
+      // else{
+      //   $$("#home-searchbar").css("display","none")
+      // }
+      // if(window.location.pathname == '/category'){
+      //   $$("#category-searchbar").css("display","block")
+      // }
+      // else{
+      //   $$("#category-searchbar").css("display","none")
+      // }
       console.log(14,this.$f7route)
       // console.log(13,this.Dom7.each)
     },

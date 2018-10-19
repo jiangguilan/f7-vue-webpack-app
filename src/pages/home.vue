@@ -1,9 +1,6 @@
 <template>
   <f7-page name="home" pull-to-refresh @ptr:refresh="onRefresh">
     <f7-navbar>
-      <f7-nav-left>
-        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
-      </f7-nav-left>
       <f7-searchbar
         cancel-link="Cancel"
         placeholder="Search in items"
@@ -15,16 +12,13 @@
         @searchbar:disable="onDisable"
         @searchbar:clear="onClear"
       ></f7-searchbar>
-      <f7-nav-right>
-        <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
-      </f7-nav-right>
     </f7-navbar>
     <f7-list class="searchbar-not-found">
       <f7-list-item title="Nothing found"></f7-list-item>
     </f7-list>
-    <f7-list class="searchbar-found" id="search-list">
+    <!--<f7-list class="searchbar-found" id="search-list">
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
-    </f7-list>
+    </f7-list>-->
     <f7-block strong>
       <f7-swiper id="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000,disableOnInteraction:false},speed:500}">
         <f7-swiper-slide><p> Slide 1 </p></f7-swiper-slide>
@@ -36,7 +30,7 @@
       </f7-swiper>
     </f7-block>
     <f7-block strong>
-      <f7-swiper next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 1, spaceBetween: 20}">
+      <f7-swiper next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 3, spaceBetween: 20}">
         <f7-swiper-slide>Slide 1</f7-swiper-slide>
         <f7-swiper-slide>Slide 2</f7-swiper-slide>
         <f7-swiper-slide>Slide 3</f7-swiper-slide>
@@ -114,8 +108,8 @@ export default {
     mounted: function () {
       var $$=this.Dom7;
       console.log(15,this.$f7route)
-      // $$("#home-searchbar").css("display","block")
-      // $$("#category-searchbar").css("display","none")
+      $$("#home-searchbar").css("display","block")
+      $$("#category-searchbar").css("display","none")
       // console.log(13,this)
       $$('#home-searchbar input[type=search]').on('keyup',function(event){
         if (event.keyCode == 13) {           
