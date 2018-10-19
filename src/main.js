@@ -33,7 +33,7 @@ Framework7.use(Framework7Vue)
 
 
 // Init App
-new Vue({
+window.app = new Vue({
   el: '#app',
   i18n, 
   template: '<app/>',

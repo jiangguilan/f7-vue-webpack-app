@@ -16,9 +16,7 @@
     </f7-panel>
 
     <!-- Main View -->
-    <f7-view id="main-view" url="/" main >
-     <!--toolbar-through :dynamic-navbar="true"-->
-     <!--<router-view></router-view>-->
+    <f7-view id="main-view" main >
       <f7-toolbar labels>
         <f7-link href="/" icon-f7="home" text="Home"></f7-link>
         <f7-link href="/category/" icon-f7="data" text="Category"></f7-link>
@@ -74,7 +72,6 @@
 // Import Routes
 import routes from './routes.js'
 
-
 export default {
   data:function() {
     return {
@@ -87,9 +84,10 @@ export default {
         routes: routes,
         swipeBackPage: true,//滑动返回
         animatePages:true,
-        // pushStateNoAnimation:true,
+        pushStateNoAnimation:true,
         swipeBackPageThreshold:100,//滑动返回响应距离
         // smartSelectSearchbar: true,//启用搜索
+        // pushState: true,//不起作用 
       },
     }
   },
@@ -103,10 +101,12 @@ export default {
       // console.log(url,path,hash,route)
       this.$f7.router.navigate(window.location.pathname+'/');
       // console.log(12,window.location)
-      if(window.location.pathname != '/'){
-        console.log(1389)
-      }
-      // console.log(12,this.f7params.animatePages)
+      // if(window.location.pathname != '/'){
+      //   console.log(1389)
+      // }
+      console.log(12,this.Dom7,this.$f7,this.$$)
+      console.log(13,this.Dom7.each)
+
       
     },
     fontSize: function () {
