@@ -100,14 +100,21 @@ export default {
       //   route=this.$f7route.route;
       // console.log(url,path,hash,route)
       this.$f7.router.navigate(window.location.pathname+'/');
-      // console.log(12,window.location)
-      // if(window.location.pathname != '/'){
-      //   console.log(1389)
-      // }
-      console.log(12,this.Dom7,this.$f7,this.$$)
-      console.log(13,this.Dom7.each)
-
-      
+      console.log(12,window.location)
+      if(window.location.pathname == '/'){
+        $$("#home-searchbar").css("display","block")
+      }
+      else{
+        $$("#home-searchbar").css("display","none")
+      }
+      if(window.location.pathname == '/category'){
+        $$("#category-searchbar").css("display","block")
+      }
+      else{
+        $$("#category-searchbar").css("display","none")
+      }
+      console.log(14,this.$f7route)
+      // console.log(13,this.Dom7.each)
     },
     fontSize: function () {
       var $$=this.Dom7;
@@ -131,6 +138,14 @@ export default {
   mounted:function () {
     this.fontSize()
     this.routeLink()
+  },
+  beforeupdate:function () {
+    console.log(888)
+  },
+  watch:{
+    load:function () {
+      console.log(16,window.location)
+    }
   },
 }
 </script>

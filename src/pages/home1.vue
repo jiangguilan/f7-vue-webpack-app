@@ -280,8 +280,8 @@ export default {
     },
     mounted: function () {
       var $$=this.Dom7;
-      $$("#home-searchbar").css("display","block")
-      $$("#category-searchbar").css("display","none")
+      // $$("#home-searchbar").css("display","block")
+      // $$("#category-searchbar").css("display","none")
       // console.log(13,this)
       $$('#home-searchbar input[type=search]').on('keyup',function(event){
         if (event.keyCode == 13) {           

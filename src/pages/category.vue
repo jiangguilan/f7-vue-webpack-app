@@ -79,8 +79,8 @@ export default {
   },
   mounted: function () {
     var $$=this.Dom7;
-    $$("#home-searchbar").css("display","none")
-    $$("#category-searchbar").css("display","block")
+    // $$("#home-searchbar").css("display","none")
+    // $$("#category-searchbar").css("display","block")
     var url=this.$f7route.url,
       path=this.$f7route.path,
       hash=this.$f7route.hash,
