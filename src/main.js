@@ -43,4 +43,7 @@ window.app = new Vue({
     app: App
   }
 });
+ var mainView = window.app;
+console.log(222,mainView)
+//  console.log(111,app.$$.isArray([1]))
 
