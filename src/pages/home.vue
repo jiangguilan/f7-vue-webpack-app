@@ -20,25 +20,54 @@
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
     </f7-list>-->
     <f7-block strong>
-      <f7-swiper id="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000,disableOnInteraction:false},speed:500}">
-        <f7-swiper-slide><p> Slide 1 </p></f7-swiper-slide>
-        <f7-swiper-slide><p> Slide 2 </p></f7-swiper-slide>
-        <f7-swiper-slide><p> Slide 3 </p></f7-swiper-slide>
-        <f7-swiper-slide><p> Slide 4 </p></f7-swiper-slide>
-        <f7-swiper-slide><p> Slide 5 </p></f7-swiper-slide>
-        <f7-swiper-slide><p> Slide 6 </p></f7-swiper-slide>
+      <f7-swiper class="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000,disableOnInteraction:false},speed:500}">
+        <f7-swiper-slide><p> <img src="static/img/detail-1.jpg" alt=""> </p></f7-swiper-slide>
+        <f7-swiper-slide><p> <img src="static/img/detail-2.jpg" alt=""> </p></f7-swiper-slide>
+        <f7-swiper-slide><p> <img src="static/img/detail-3.jpg" alt=""> </p></f7-swiper-slide>
+        <f7-swiper-slide><p> <img src="static/img/detail-4.jpg" alt=""> </p></f7-swiper-slide>
+        <f7-swiper-slide><p> <img src="static/img/detail-5.jpg" alt=""> </p></f7-swiper-slide>
+        <f7-swiper-slide><p> <img src="static/img/detail-6.jpg" alt=""> </p></f7-swiper-slide>
       </f7-swiper>
     </f7-block>
-    <f7-block strong>
-      <f7-swiper next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 3, spaceBetween: 20}">
-        <f7-swiper-slide>Slide 1</f7-swiper-slide>
-        <f7-swiper-slide>Slide 2</f7-swiper-slide>
-        <f7-swiper-slide>Slide 3</f7-swiper-slide>
-        <f7-swiper-slide>Slide 4</f7-swiper-slide>
-        <f7-swiper-slide>Slide 5</f7-swiper-slide>
-        <f7-swiper-slide>Slide 6</f7-swiper-slide>
+    <f7-block >
+      <f7-swiper class="flash-banner" next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 3, spaceBetween: 20}">
+        <f7-swiper-slide><img src="static/img/detail-1.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-2.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-3.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-4.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-5.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-6.jpg" alt=""></f7-swiper-slide>
       </f7-swiper>
     </f7-block>
+    <f7-block >
+      <f7-swiper class="activity-banner" next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 5, spaceBetween: 20}">
+        <f7-swiper-slide><img src="static/img/detail-1.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-2.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-3.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-4.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-5.jpg" alt=""></f7-swiper-slide>
+        <f7-swiper-slide><img src="static/img/detail-6.jpg" alt=""></f7-swiper-slide>
+      </f7-swiper>
+    </f7-block>
+    <f7-block class="product-list" >
+      <f7-row>
+        <f7-col width="50">
+          <img src="static/img/detail-1.jpg" alt="">
+        </f7-col>
+        <f7-col width="50">
+          <img src="static/img/detail-2.jpg" alt="">
+        </f7-col>
+      </f7-row>
+      <f7-row>
+        <f7-col width="50">
+          <img src="static/img/detail-3.jpg" alt="">
+        </f7-col>
+        <f7-col width="50">
+          <img src="static/img/detail-4.jpg" alt="">
+        </f7-col>
+      </f7-row>
+    </f7-block>
+    
     <f7-block strong>
       <f7-row>
         <f7-col width="50">
@@ -108,6 +137,7 @@ export default {
     mounted: function () {
       var $$=this.Dom7;
       console.log(15,this.$f7route)
+      console.log(18,this.$router)
       $$("#home-searchbar").css("display","block")
       $$("#category-searchbar").css("display","none")
       // console.log(13,this)

@@ -3,11 +3,43 @@
     <f7-navbar title="Cart" back-link="Back"></f7-navbar>
     <f7-block-title>About My App</f7-block-title>
     <f7-block strong>
-      <p>Here is About page!</p>
-      <p>You can go <f7-link back>back</f7-link>.</p>
-      <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>
-      <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+      <f7-list media-list>
+        <f7-list-item title="Item 1" subtitle="Subtitle 1" text="Item 1 Text"></f7-list-item>
+        <f7-list-item title="Item 1" subtitle="Subtitle 2" text="Item 2 Text"></f7-list-item>
+      </f7-list>
     </f7-block>
+    <f7-list class="cart-list" media-list>
+      <f7-list-item
+        link="/item/"
+        media="static/img/detail-1.jpg"
+        title="Item Title"
+        subtitle="Item Subtitle"
+        text="Some text"
+        after=""
+      ></f7-list-item>
+    </f7-list>
+
+    <f7-list class="cart-list" media-list>
+      <f7-list-item
+        link="/home/"
+        media="static/img/detail-1.jpg"
+        title="Item Title"
+        subtitle="Item Subtitle"
+        text="Text"
+        after="Read more"
+        >
+          <div slot="root-start">Root Start</div>
+          <div slot="root">Root</div>
+          <div slot="content-start">Content Start</div>
+          <div slot="content">Content</div>
+          <div slot="media-start">Media Start</div>
+          <div slot="media">Media</div>
+          <span slot="after-start">After Start</span>
+          <span slot="after">After</span>
+          <div slot="inner-start">Inner Start</div>
+          <div slot="inner">Inner</div>
+      </f7-list-item>
+    </f7-list>
   </f7-page>
 </template>
 

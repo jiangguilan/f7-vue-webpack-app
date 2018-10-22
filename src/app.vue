@@ -113,7 +113,7 @@ export default {
       // else{
       //   $$("#category-searchbar").css("display","none")
       // }
-      console.log(14,this.$f7route)
+      console.log(14,this.$router)
       // console.log(13,this.Dom7.each)
     },
     fontSize: function () {
