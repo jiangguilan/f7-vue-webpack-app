@@ -19,16 +19,14 @@
     <!--<f7-list class="searchbar-found" id="search-list">
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
     </f7-list>-->
-    <f7-block strong>
-      <f7-swiper class="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000,disableOnInteraction:false},speed:500}">
-        <f7-swiper-slide><p> <img src="static/img/detail-1.jpg" alt=""> </p></f7-swiper-slide>
-        <f7-swiper-slide><p> <img src="static/img/detail-2.jpg" alt=""> </p></f7-swiper-slide>
-        <f7-swiper-slide><p> <img src="static/img/detail-3.jpg" alt=""> </p></f7-swiper-slide>
-        <f7-swiper-slide><p> <img src="static/img/detail-4.jpg" alt=""> </p></f7-swiper-slide>
-        <f7-swiper-slide><p> <img src="static/img/detail-5.jpg" alt=""> </p></f7-swiper-slide>
-        <f7-swiper-slide><p> <img src="static/img/detail-6.jpg" alt=""> </p></f7-swiper-slide>
-      </f7-swiper>
-    </f7-block>
+    <f7-swiper class="banner" pagination next-button prev-button scrollbar :params="{autoplay:{delay:2000,disableOnInteraction:false},speed:500}">
+      <f7-swiper-slide><p> <img src="static/img/detail-1.jpg" alt=""> </p></f7-swiper-slide>
+      <f7-swiper-slide><p> <img src="static/img/detail-2.jpg" alt=""> </p></f7-swiper-slide>
+      <f7-swiper-slide><p> <img src="static/img/detail-3.jpg" alt=""> </p></f7-swiper-slide>
+      <f7-swiper-slide><p> <img src="static/img/detail-4.jpg" alt=""> </p></f7-swiper-slide>
+      <f7-swiper-slide><p> <img src="static/img/detail-5.jpg" alt=""> </p></f7-swiper-slide>
+      <f7-swiper-slide><p> <img src="static/img/detail-6.jpg" alt=""> </p></f7-swiper-slide>
+    </f7-swiper>
     <f7-block >
       <f7-swiper class="flash-banner" next-button prev-button :params="{autoplay:{delay:2000},speed:500, slidesPerView: 3, spaceBetween: 20}">
         <f7-swiper-slide><img src="static/img/detail-1.jpg" alt=""></f7-swiper-slide>

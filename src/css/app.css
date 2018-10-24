@@ -55,3 +55,6 @@ img {
   height: 2rem;
   width: 20%;
 }
+.ios .navbar ~ *:not(.no-navbar) .page-content {
+  padding-top: 30px;
+}
