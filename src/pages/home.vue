@@ -91,7 +91,7 @@
     <f7-list>
       <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
       <f7-list-item link="/load-something-that-doesnt-exist/" title="Default Route (404)"></f7-list-item>
-      <f7-list-item link="/login-test-lang/" title="/login-test-lang/"></f7-list-item>
+      <f7-list-item link="/login-test-lang" title="/login-test-lang/"></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
@@ -135,8 +135,8 @@ export default {
     },
     mounted: function () {
       var $$=this.Dom7;
-      console.log(15,this.$f7route)
-      console.log(18,this.$router)
+      // console.log(15,this.$f7route)
+      // console.log(18,this.$router)
       $$("#home-searchbar").css("display","block")
       $$("#category-searchbar").css("display","none")
       // console.log(13,this)

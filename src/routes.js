@@ -30,11 +30,11 @@ export default [
     component: PanelRightPage,
   },
   {
-    path: '/about/',
+    path: '/about',
     component: AboutPage,
   },
   {
-    path: '/form/',
+    path: '/form',
     component: FormPage,
   },
   {
@@ -42,27 +42,27 @@ export default [
     component: DynamicRoutePage,
   },
   {
-    path: '/category/',
+    path: '/category',
     component: CategoryPage,
   },
   {
-    path: '/explore/',
+    path: '/explore',
     component: ExplorePage,
   },
   {
-    path: '/cart/',
+    path: '/cart',
     component: CartPage,
   },
   {
-    path: '/account/',
+    path: '/account',
     component: AccountPage,
   },
   {
-    path: '/login-test-lang/',
+    path: '/login-test-lang',
     component: LoginTestLang,
   },
   {
-    path: '/details/',
+    path: '/details',
     component: DetailsPage,
   },
   {

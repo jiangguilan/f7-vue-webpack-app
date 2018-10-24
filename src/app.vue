@@ -19,10 +19,10 @@
     <f7-view id="main-view" main >
       <f7-toolbar labels>
         <f7-link href="/" icon-f7="home" text="Home"></f7-link>
-        <f7-link href="/category/" icon-f7="data" text="Category"></f7-link>
-        <f7-link href="/explore/" icon-f7="compass" text="Explore"></f7-link>
-        <f7-link href="/cart/" icon-f7="bag" text="Cart"></f7-link>
-        <f7-link href="/account/" icon-f7="person" text="Account"></f7-link>
+        <f7-link href="/category" icon-f7="data" text="Category"></f7-link>
+        <f7-link href="/explore" icon-f7="compass" text="Explore"></f7-link>
+        <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
+        <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
       </f7-toolbar>
     </f7-view>
 
@@ -99,22 +99,8 @@ export default {
       //   hash=this.$f7route.hash,
       //   route=this.$f7route.route;
       // console.log(url,path,hash,route)
-      this.$f7.router.navigate(window.location.pathname+'/');
-      console.log(12,window.location)
-      // if(window.location.pathname == '/'){
-      //   $$("#home-searchbar").css("display","block")
-      // }
-      // else{
-      //   $$("#home-searchbar").css("display","none")
-      // }
-      // if(window.location.pathname == '/category'){
-      //   $$("#category-searchbar").css("display","block")
-      // }
-      // else{
-      //   $$("#category-searchbar").css("display","none")
-      // }
-      // console.log(14,this.$router)
-      console.log(13,this)
+      // this.$f7.router.navigate(window.location.pathname+'/');
+      // console.log(12,window.location)
     },
     fontSize: function () {
       var $$=this.Dom7;
@@ -131,6 +117,10 @@ export default {
         document.documentElement.style.fontSize=document.documentElement.clientWidth/7.5+'px';
       }
     },
+    reload: function () {
+      this.search();
+      console.log(this.search())
+    },
   },
   beforemount:function () {
     // this.routeLink()
@@ -140,12 +130,10 @@ export default {
     this.routeLink()
   },
   beforeupdate:function () {
-    console.log(888)
+    // console.log(888)
   },
   watch:{
-    load:function () {
-      console.log(16,window.location)
-    }
+    $route:'reload'
   },
 }
 </script>
