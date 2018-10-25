@@ -24,6 +24,8 @@ import AppStyles from './css/app.css';
 import App from './app';
 import i18n from './tools/i18ns'
 
+import $ from 'jquery'
+
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
 // Vue.use(Framework7Vue)
