@@ -101,6 +101,7 @@ export default {
       // console.log(url,path,hash,route)
       // this.$f7.router.navigate(window.location.pathname+'/');
       // console.log(12,window.location)
+      console.log(this)
     },
     fontSize: function () {
       var $$=this.Dom7;

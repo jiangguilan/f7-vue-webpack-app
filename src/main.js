@@ -33,7 +33,7 @@ Framework7.use(Framework7Vue)
 
 
 // Init App
-window.app = new Vue({
+new Vue({
   el: '#app',
   i18n, 
   template: '<app/>',
@@ -43,4 +43,20 @@ window.app = new Vue({
     app: App
   }
 });
-
+// var myApp = new Framework7({
+//     // Default title for modals
+//     modalTitle: 'My App',
+ 
+//     // If it is webapp, we can enable hash navigation:
+//     pushState: true,
+ 
+//     // Hide and show indicator during ajax requests
+//     onAjaxStart: function (xhr) {
+//         myApp.showIndicator();
+//     },
+//     onAjaxComplete: function (xhr) {
+//         myApp.hideIndicator();
+//     },
+//     theme:'ios'
+// });
+// console.log(myApp)
