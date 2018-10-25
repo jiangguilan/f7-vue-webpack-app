@@ -93,6 +93,7 @@
       <f7-list-item link="/load-something-that-doesnt-exist/" title="Default Route (404)"></f7-list-item>
       <f7-list-item link="/login-test-lang" title="/login-test-lang/"></f7-list-item>
     </f7-list>
+    <div @click="totop">to top</div>
   </f7-page>
 </template>
 <script>
@@ -132,6 +133,21 @@ export default {
         console.log("reflash")
         // mainView.router.refreshPage()
       },
+      totop: function () {
+        console.log(1)
+          // var timer = null;
+        // $(".to_top").click(function(){
+         var timer = setInterval(function(){//设置定时器
+            var osTop = $(document).scrollTop();//获取滚动条高
+            var ispeed = Math.floor(osTop/5);//ispeed 最后等于0
+            $(document).scrollTop(osTop-ispeed);
+            if(osTop==(osTop-ispeed)){
+                clearInterval(timer);//这里osTop==(osTop-ispeed)即ispeed等于0时 条件成立
+                timer=null;
+            }
+          },30);
+        // });
+      },
     },
     mounted: function () {
       var $$=this.Dom7;
@@ -146,11 +162,11 @@ export default {
           console.log(111,event.target.value) 
         }
       })
+      // $(document).on('scroll', '#framework7-root', function(){
+      //   console.log('scrolling');
+      // }, true);
     },
     watch: {
-      // picked: function (newVal,oldVal) {
-      //   console.log(newVal,oldVal)
-      // }
     },
   }
 </script>

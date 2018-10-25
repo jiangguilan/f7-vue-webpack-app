@@ -101,7 +101,7 @@ export default {
       // console.log(url,path,hash,route)
       // this.$f7.router.navigate(window.location.pathname+'/');
       // console.log(12,window.location)
-      console.log($)
+      // console.log($)
     },
     fontSize: function () {
       var $$=this.Dom7;
@@ -120,7 +120,7 @@ export default {
     },
     reload: function () {
       this.search();
-      console.log(this.search())
+      // console.log(this.search())
     },
   },
   beforemount:function () {
