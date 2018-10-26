@@ -162,7 +162,7 @@ export default {
       $("#totop").click(function(){
         console.log(1)
         $('.page-content').animate({scrollTop: '0px'}, 400);   
-          $('.page-content').scrollTop(0);
+          // $('.page-content').scrollTop(0);
       })
     },
     watch: {
