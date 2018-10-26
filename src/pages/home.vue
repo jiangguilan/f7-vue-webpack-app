@@ -93,7 +93,7 @@
       <f7-list-item link="/load-something-that-doesnt-exist/" title="Default Route (404)"></f7-list-item>
       <f7-list-item link="/login-test-lang" title="/login-test-lang/"></f7-list-item>
     </f7-list>
-    <div @click="totop">to top</div>
+    <div id="totop" @click="totop">to top</div>
   </f7-page>
 </template>
 <script>
@@ -134,37 +134,36 @@ export default {
         // mainView.router.refreshPage()
       },
       totop: function () {
-        console.log(1)
           // var timer = null;
-        // $(".to_top").click(function(){
-         var timer = setInterval(function(){//设置定时器
-            var osTop = $(document).scrollTop();//获取滚动条高
-            var ispeed = Math.floor(osTop/5);//ispeed 最后等于0
-            $(document).scrollTop(osTop-ispeed);
-            if(osTop==(osTop-ispeed)){
-                clearInterval(timer);//这里osTop==(osTop-ispeed)即ispeed等于0时 条件成立
-                timer=null;
-            }
-          },30);
+        // // $(".to_top").click(function(){
+        //  var timer = setInterval(function(){//设置定时器
+        //     console.log(1)
+        //     var osTop = $(".page-content").scrollTop();//获取滚动条高
+        //     var ispeed = Math.floor(osTop/50);//ispeed 最后等于0
+        //     $(".page-content").scrollTop(osTop-ispeed);
+        //     if(osTop==(osTop-ispeed)){
+        //         clearInterval(timer);//这里osTop==(osTop-ispeed)即ispeed等于0时 条件成立
+        //         timer=null;
+        //     }
+        //   },300);
         // });
       },
     },
     mounted: function () {
       var $$=this.Dom7;
-      // console.log(15,this.$f7route)
-      // console.log(18,this.$router)
       $$("#home-searchbar").css("display","block")
       $$("#category-searchbar").css("display","none")
-      // console.log(13,this)
       $$('#home-searchbar input[type=search]').on('keyup',function(event){
         if (event.keyCode == 13) {           
           event.preventDefault();         
           console.log(111,event.target.value) 
         }
       })
-      // $(document).on('scroll', '#framework7-root', function(){
-      //   console.log('scrolling');
-      // }, true);
+      $("#totop").click(function(){
+        console.log(1)
+        $('.page-content').animate({scrollTop: '0px'}, 400);   
+          $('.page-content').scrollTop(0);
+      })
     },
     watch: {
     },
