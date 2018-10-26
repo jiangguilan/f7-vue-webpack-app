@@ -123,30 +123,11 @@ export default {
         console.log('disable');
         this.$$('#searchContent').hide();
       },
-      onKeypress: function (event) {
-        if (event.keyCode == 13) {           
-          event.preventDefault();         
-          console.log(event.target.value) 
-        }
-      },
       onRefresh: function () {
         console.log("reflash")
-        // mainView.router.refreshPage()
       },
       totop: function () {
-          // var timer = null;
-        // // $(".to_top").click(function(){
-        //  var timer = setInterval(function(){//设置定时器
-        //     console.log(1)
-        //     var osTop = $(".page-content").scrollTop();//获取滚动条高
-        //     var ispeed = Math.floor(osTop/50);//ispeed 最后等于0
-        //     $(".page-content").scrollTop(osTop-ispeed);
-        //     if(osTop==(osTop-ispeed)){
-        //         clearInterval(timer);//这里osTop==(osTop-ispeed)即ispeed等于0时 条件成立
-        //         timer=null;
-        //     }
-        //   },300);
-        // });
+        $('.page-content').animate({scrollTop: '0px'}, 400);
       },
     },
     mounted: function () {
@@ -158,11 +139,6 @@ export default {
           event.preventDefault();         
           console.log(111,event.target.value) 
         }
-      })
-      $("#totop").click(function(){
-        console.log(1)
-        $('.page-content').animate({scrollTop: '0px'}, 400);   
-          // $('.page-content').scrollTop(0);
       })
     },
     watch: {
