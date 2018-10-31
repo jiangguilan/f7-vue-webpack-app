@@ -56,7 +56,7 @@
           <img src="static/img/detail-2.jpg" alt="">
         </f7-col>
       </f7-row>
-      <f7-row>
+      <f7-row>   
         <f7-col width="50">
           <img src="static/img/detail-3.jpg" alt="">
         </f7-col>
@@ -73,7 +73,7 @@
           <f7-button fill raised popup-open="#popup">Popup</f7-button>
         </f7-col>
         <f7-col width="50">
-          <f7-button fill raised login-screen-open="#login-screen">Login Screen</f7-button>
+          <f7-button @click="login_popup" fill raised login-screen-open="#login-screen">Login Screen</f7-button>
         </f7-col>
       </f7-row>
     </f7-block>
@@ -128,6 +128,11 @@ export default {
       },
       totop: function () {
         $('.page-content').animate({scrollTop: '0px'}, 400);
+      },
+      login_popup: function () {
+        $("html").addClass("with-modal-loginscreen")
+        $("#sign_in .item-link.list-button").addClass("login-screen-close")
+        $("#login-screen").css("display","block")  
       },
     },
     mounted: function () {
