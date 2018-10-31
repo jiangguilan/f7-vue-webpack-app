@@ -51,13 +51,13 @@
               <input class="input_name" @focus="nameFocus" @blur="nameBlur($event)" name="username" type="text"></input> 
               <img v-show="isShowLoginDel" @click="login_del($event)" src="static/img/login_del.png">
             </div>
-            <div class="login_tip name_tip">The (Email/Mobile Number) has not been registered before</div>
+            <div v-if="isError" class="login_tip name_tip"></div>
             <div v-bind:style="{'height':+passHeight+ 'rem'}">
               <label @click="tri_pass_input($event)" id="label_password" v-bind:style="{'bottom':+passwordTop+ 'rem'}">Enter your password</label>
               <input class="input_pass" @focus="passwordFocus" @blur="passwordBlur($event)" name="password" type="password"></input>
               <img v-show="isShowLoginPass" @click="login_isShow($event)" src="static/img/login_hide.png">
             </div>
-            <div class="login_tip pass_tip">Your password must be 6-20 characters</div>
+            <!--<div class="login_tip pass_tip">Your password must be 6-20 characters</div>-->
           </div>
           <div class="forget_link">
             <f7-link text="Forget Password ?"></f7-link>
@@ -109,6 +109,7 @@ export default {
       passHeight:.52,
       isShowLoginDel:false,
       isShowLoginPass:false,
+      isError:false,
     }
   },
   methods: {
@@ -129,17 +130,44 @@ export default {
       this.search();
     },
     login: function () {
-      var status="SUCCESS";
-      var status="FAILUR";
+      var that=this;
+      // var status="SUCCESS";
+      // var status="FAILUR";
       var status="PHONE_UNVALID";//账号非法
-      var status="REGISTERED";//
-      var status="SUCCESS";
-      var flag=true;
-      if(flag){
+      // var status="NO_REGISTERED";//没注册
+      // var status="NUMBER_ERROR";//账号密码不匹配
+      if(status=="SUCCESS"){
+        that.isError=false;
         $("#sign_in .item-link.list-button").removeClass("login-screen-close")
         $("html").removeClass("with-modal-loginscreen")
         $("#login-screen").fadeOut(200,linear)
-          
+        $(".ios .login_form input.input_name").css({"border":"none","border-bottom":"1px solid #B1B1B1"})
+      }else if(status=="FAILUR"){
+        that.isError=false;
+        $(".name_tip").html("")//Login failed!Please check your account and password
+
+      }else if(status=="PHONE_UNVALID"){
+          console.log(that)
+        // setTimeout(function() {
+        //   that.isError=true;
+        //   console.log(that)
+        // }, 1000);
+        // that.set(that.isError,0,true)
+        $(".name_tip").html("Incorrect (mailbox / phone number) format")
+        // $("#sign_in .item-link.list-button").addClass("login-screen-close")
+        $("html").addClass("with-modal-loginscreen")
+        $(".ios .login_form input.input_name").css("border","1px solid #EA453D")
+        // $("#login-screen").fadeOut(200,linear)
+
+      }else if(status=="NO_REGISTERED"){
+        that.isError=true;
+        $(".name_tip").html("The (email / phone Number) has not been registered before")
+        $("html").addClass("with-modal-loginscreen")
+        $(".ios .login_form input.input_name").css("border","1px solid #EA453D")
+
+      }else if(status=="NUMBER_ERROR"){
+        that.isError=false;
+        // $("").html("")//Login failed!Please check your account and password
 
       }
       

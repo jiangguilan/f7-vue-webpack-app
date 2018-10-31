@@ -131,7 +131,7 @@ export default {
       },
       login_popup: function () {
         $("html").addClass("with-modal-loginscreen")
-        $("#sign_in .item-link.list-button").addClass("login-screen-close")
+        // $("#sign_in .item-link.list-button").addClass("login-screen-close")
         $("#login-screen").css("display","block")  
       },
     },
