@@ -51,7 +51,7 @@
               <input class="input_name" @focus="nameFocus" @blur="nameBlur($event)" name="username" type="text"></input> 
               <img v-show="isShowLoginDel" @click="login_del($event)" src="static/img/login_del.png">
             </div>
-            <div v-if="isError" class="login_tip name_tip"></div>
+            <div v-show="isError" class="login_tip name_tip"></div>
             <div v-bind:style="{'height':+passHeight+ 'rem'}">
               <label @click="tri_pass_input($event)" id="label_password" v-bind:style="{'bottom':+passwordTop+ 'rem'}">Enter your password</label>
               <input class="input_pass" @focus="passwordFocus" @blur="passwordBlur($event)" name="password" type="password"></input>
@@ -149,7 +149,7 @@ export default {
       }else if(status=="PHONE_UNVALID"){
           console.log(that)
         // setTimeout(function() {
-        //   that.isError=true;
+          that.isError=true;
         //   console.log(that)
         // }, 1000);
         // that.set(that.isError,0,true)
