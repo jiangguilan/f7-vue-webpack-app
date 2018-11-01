@@ -284,6 +284,46 @@ div#register-screen .page-content {
   text-align: center;
   margin-top: .1rem;
 }
+.rp_nav {
+  background: #EA453D;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .88rem;
+  color: #fff;
+  text-align: center;
+  line-height: .88rem;
+  font-size: .24rem;
+}
+.rp_nav a {
+  display: inline-block;
+  width: .48rem;
+  height: .48rem;
+  position: absolute;
+  bottom: .18rem;
+  left: .1rem;
+  background: url('../../static/img/nav_btn_back.png');
+  background-size: cover;
+}
+.rp_body {
+  margin-top: .88rem;
+  background: #fff;
+  overflow: auto;
+  height: 100%;
+}
+.rp_top {
+  width: 100%;
+  height: .88rem;
+  background: #F1F1F1;
+  line-height: .88rem;
+  display: flex;
+  justify-content: space-around;
+}
+.rp_top span {
+  color: #1B1B1B;
+  font-size: .24rem;
+}
 .ios .icon-back,
 .ios .icon-prev {
   background-image: url(../../static/img/nav_btn_back.png);

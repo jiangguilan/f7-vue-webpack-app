@@ -17,21 +17,14 @@
 
     <!-- Main View -->
     <f7-view id="main-view" main >
-      <f7-toolbar labels>
-        <f7-link href="/" icon-f7="home" text="Home"></f7-link>
-        <f7-link href="/category" icon-f7="data" text="Category"></f7-link>
-        <f7-link href="/explore" icon-f7="compass" text="Explore"></f7-link>
-        <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
-        <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
-      </f7-toolbar>
 
-      <!--tip-->
     </f7-view>
 
 
-      <div class="modal modal-in tip">
-        <div class="text">Please enter valid phone number !</div>
-      </div>
+    <!--tip-->
+    <div class="modal modal-in tip">
+      <div class="text">Please enter valid phone number !</div>
+    </div>
 
     <!-- Popup -->
     <f7-popup id="popup">

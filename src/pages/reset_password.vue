@@ -1,11 +1,32 @@
 <template>
   <f7-page>
-    <f7-navbar title="My App" back-link="Back"></f7-navbar>
     <div class="rp_nav">
-      <img @click="rp_back" src="static/img/nav_btn_back.png">
+      <f7-link back></f7-link>
       Reset Password
     </div>
-    <div class="rp_body"></div>
+    <div class="rp_body">
+      <div class="rp_top">
+        <span>Email</span>
+        <span>Mobile phone</span>
+      </div>
+      <div class="rp_bottom">
+        <div>
+          <span>Mobile Phone</span>
+          <div>
+            <span>+60</span>
+            <input type="text">
+          </div>
+        </div>
+        <div>
+          <span>SMS code</span>
+          <div>
+            <input type="text">
+            <span>Send SMS</span>
+          </div>
+        </div>
+        <f7-link>Reset Password</f7-link>
+      </div>
+    </div>
   </f7-page>
 </template>
 <script>
@@ -32,28 +53,4 @@ export default {
   }
 </script>
 
-<style scoped>
-  .ios .navbar{
-    background: #EA453D;
-  }
-  .rp_nav{
-    background:#EA453D;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: .88rem;
-    color: #fff;
-    text-align: center;
-    line-height: .88rem;
-    font-size: .24rem;
-  }
-  .rp_nav img{
-    width: .48rem;
-    height: .48rem;
-    position: absolute;
-    bottom: .18rem;
-    left: .1rem;
-  }
-</style>
 

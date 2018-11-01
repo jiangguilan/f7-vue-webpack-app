@@ -13,6 +13,13 @@
         @searchbar:clear="onClear"
       ></f7-searchbar>
     </f7-navbar>
+    <f7-toolbar labels>
+      <f7-link href="/" icon-f7="home" text="Home"></f7-link>
+      <f7-link href="/category" icon-f7="data" text="Category"></f7-link>
+      <f7-link href="/explore" icon-f7="compass" text="Explore"></f7-link>
+      <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
+      <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
+    </f7-toolbar>
     <f7-list class="searchbar-not-found">
       <f7-list-item title="Nothing found"></f7-list-item>
     </f7-list>
