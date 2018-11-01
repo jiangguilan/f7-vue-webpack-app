@@ -15,6 +15,7 @@ import CartPage from './pages/cart.vue';
 import AccountPage from './pages/account.vue';
 import LoginTestLang from './pages/login-test-lang.vue';
 import DetailsPage from './pages/details.vue';
+import reset_password from './pages/reset_password.vue';
 
 export default [
   {
@@ -68,6 +69,10 @@ export default [
   {
     path: '/details/:product/user/:user',
     component: DetailsPage,
+  },
+  {
+    path: '/reset_password',
+    component: reset_password,
   },
   {
     path: '(.*)',

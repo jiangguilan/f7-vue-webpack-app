@@ -77,6 +77,13 @@
         </f7-col>
       </f7-row>
     </f7-block>
+    <f7-block strong>
+      <f7-row>
+        <f7-col width="50">
+          <f7-button @click="register_popup" fill raised login-screen-open="#register-screen">register Screen</f7-button>
+        </f7-col>
+      </f7-row>
+    </f7-block>
     <f7-block-title>Panels</f7-block-title>
     <f7-block strong>
       <f7-row>
@@ -92,6 +99,7 @@
       <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
       <f7-list-item link="/load-something-that-doesnt-exist/" title="Default Route (404)"></f7-list-item>
       <f7-list-item link="/login-test-lang" title="/login-test-lang/"></f7-list-item>
+      <f7-list-item link="/reset_password" title="/reset password/"></f7-list-item>
     </f7-list>
     <div id="totop" @click="totop">to top</div>
   </f7-page>
@@ -131,8 +139,13 @@ export default {
       },
       login_popup: function () {
         $("html").addClass("with-modal-loginscreen")
-        // $("#sign_in .item-link.list-button").addClass("login-screen-close")
+        $('#login-screen').addClass('modal-in')
         $("#login-screen").css("display","block")  
+      },
+      register_popup:function(){
+        $("html").addClass("with-modal-loginscreen")
+        $('#register-screen').addClass('modal-in')
+        $("#register-screen").css("display","block")// fadeIn(200,'linear') 
       },
     },
     mounted: function () {

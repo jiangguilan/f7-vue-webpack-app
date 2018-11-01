@@ -24,7 +24,14 @@
         <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
         <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
       </f7-toolbar>
+
+      <!--tip-->
     </f7-view>
+
+
+      <div class="modal modal-in tip">
+        <div class="text">Please enter valid phone number !</div>
+      </div>
 
     <!-- Popup -->
     <f7-popup id="popup">
@@ -80,6 +87,69 @@
       </f7-view>
     </f7-login-screen>
 
+    <!-- register Screen -->
+    <f7-login-screen id="register-screen">
+      <f7-view>
+        <f7-page register-screen>
+          <div class="re_head">
+            <img @click="re_exit" src="static/img/re_exit.png">
+            Register
+          </div>
+          <div class="re_body">
+            <div class="re_input">
+              <div>
+                <div>
+                  <span>First Name</span>
+                  <input id='re_first_id' @focus="re_first_focus" @blur="re_first_fn" v-model="re_first" type="text">
+                  <img v-show="isFirst" @click="re_del_first" src="static/img/login_del.png">
+                </div>
+                <p v-show="re_first_null">Please enter your first name</p>
+              </div>
+              <div>
+                <div>
+                  <span>Last Name</span>
+                  <input id='re_last_id' @focus="re_last_focus" @blur="re_last_fn" v-model="re_last" type="text">
+                  <img v-show="isLast" @click="re_del_last" src="static/img/login_del.png">
+                </div>
+                <p v-show="re_last_null">Please enter your last name</p>
+              </div>
+              <div>
+                <div>
+                  <span>Email / Mobile Number</span>
+                  <input id="re_number_id" v-model="re_number" @focus="re_num_focus" @blur="re_num_blur" type="text">
+                  <img v-show="isReFocus" @click="re_del_text" src="static/img/login_del.png">  
+                </div>
+                <p v-show="re_num_null">Please enter your email / mobile pbone</p>
+              </div>
+              <div>
+                <div>
+                  <span>Input validation code</span>
+                  <input id='re_code_id' @focus="re_code_focus" @blur="re_code_fn" v-model="re_code" type="text">
+                  <img v-show="isCode" @click="re_del_code" src="static/img/login_del.png">
+                </div>
+                <p v-show="re_code_null">Please enter your validation code</p>
+              </div>
+              <div>
+                <div>
+                  <span>Password</span>
+                  <input id="re_password_id" v-model="re_password" @focus="re_p_focus" @blur="re_p_blur" type="password">
+                  <img v-show="isReShow" @click="re_show($event)" src="static/img/login_hide.png"> 
+                </div>
+                <p v-show="re_p_null">Please enter your password</p>
+              </div>
+            </div>
+            <div class="re_bottom">
+              <f7-link @click="register" class="re-complete" text="Complete registration"></f7-link>
+              <div>
+                Already a member? 
+                <f7-link text="Log in"></f7-link>
+              </div>
+            </div>
+          </div>
+        </f7-page>
+      </f7-view>
+    </f7-login-screen>
+
   </f7-app>
 </template>
 
@@ -110,15 +180,26 @@ export default {
       isShowLoginDel:false,
       isShowLoginPass:false,
       isError:false,
+      isReFocus:false,
+      isReShow:false,
+      re_first:'',
+      re_last:'',
+      re_number:'',
+      re_code:'',
+      re_password:'',
+      re_first_null:false,
+      re_last_null:false,
+      re_num_null:false,
+      re_code_null:false,
+      re_p_null:false,
+      isFirst:false,
+      isLast:false,
+      isCode:false,
     }
   },
   methods: {
-    routeLink: function () {
-      var $$=this.Dom7;
-    },
     fontSize: function () {
       var $$=this.Dom7;
-      // console.log($$(document))
       if(document.documentElement.clientWidth >= 640){
         document.documentElement.style.fontSize=100+'px';
       }
@@ -131,28 +212,30 @@ export default {
     },
     login: function () {
       var that=this;
-      // var status="SUCCESS";
+      var status="SUCCESS";
       // var status="FAILUR";
-      var status="PHONE_UNVALID";//账号非法
+      // var status="PHONE_UNVALID";//账号非法
       // var status="NO_REGISTERED";//没注册
       // var status="NUMBER_ERROR";//账号密码不匹配
       if(status=="SUCCESS"){
         that.isError=false;
-        $("#sign_in .item-link.list-button").removeClass("login-screen-close")
+        // $("#sign_in .item-link.list-button").removeClass("login-screen-close")
         $("html").removeClass("with-modal-loginscreen")
-        $("#login-screen").fadeOut(200,linear)
+        setTimeout(function() {
+          $('#login-screen').removeClass('modal-in')
+        }, 200);
+        $("#login-screen").fadeOut(200,"linear")
         $(".ios .login_form input.input_name").css({"border":"none","border-bottom":"1px solid #B1B1B1"})
       }else if(status=="FAILUR"){
         that.isError=false;
-        $(".name_tip").html("")//Login failed!Please check your account and password
+        $(".tip").fadeIn(200,"linear")
+        setTimeout(function() {
+          $(".tip").fadeOut(200,"linear")
+        }, 2000);
+        $(".tip .text").html("Login failed!Please check your account and password")//Login failed!Please check your account and password
 
       }else if(status=="PHONE_UNVALID"){
-          console.log(that)
-        // setTimeout(function() {
-          that.isError=true;
-        //   console.log(that)
-        // }, 1000);
-        // that.set(that.isError,0,true)
+        that.isError=true;
         $(".name_tip").html("Incorrect (mailbox / phone number) format")
         // $("#sign_in .item-link.list-button").addClass("login-screen-close")
         $("html").addClass("with-modal-loginscreen")
@@ -167,8 +250,11 @@ export default {
 
       }else if(status=="NUMBER_ERROR"){
         that.isError=false;
-        // $("").html("")//Login failed!Please check your account and password
-
+        $(".tip").fadeIn(200,"linear")
+        setTimeout(function() {
+          $(".tip").fadeOut(200,"linear")
+        }, 2000);
+        $(".tip .text").html("Login failed!Please check your account and password")//Login failed!Please check your account and password
       }
       
     },
@@ -221,16 +307,130 @@ export default {
       }
       $(".input_pass").focus()
     },
+    re_num_focus:function(){
+      this.isReFocus=true;
+    },
+    re_num_blur:function(){
+      if(this.re_number==''){
+        this.isReFocus=false;
+      }else{
+        this.isReFocus=true;
+      }
+      this.re_num_null=false
+      $('#re_number_id').css({'border':'none','border-bottom':'1px solid #1B1B1B'})
+    },
+    re_del_text:function(e){
+      this.re_number='';
+      $("#re_number_id").focus()
+    },
+    re_del_first:function(e){
+      this.re_first='';
+      $("#re_first_id").focus()
+    },
+    re_del_last:function(e){
+      this.re_last='';
+      $("#re_last_id").focus()
+    },
+    re_del_code:function(e){
+      this.re_code='';
+      $("#re_code_id").focus()
+    },
+    re_p_focus:function(){
+      this.isReShow=true;
+    },
+    re_p_blur:function(){
+      if(this.re_password==''){
+        this.isReShow=false;
+      }else{
+        this.isReShow=true;
+      }
+      this.re_p_null=false
+      $('#re_password_id').css({'border':'none','border-bottom':'1px solid #1B1B1B'})
+    },
+    re_show:function(e){
+      if($('#re_password_id').attr("type")=="text"){
+        $('#re_password_id').attr("type",'password')
+        $("#re_password_id").focus()
+        $(e.target).attr('src','static/img/login_hide.png')
+      }else{
+        $('#re_password_id').attr("type",'text')  
+        $(e.target).attr('src','static/img/login_show.png')
+      }
+    },
+    re_exit:function(){
+      $('html').removeClass('with-modal-loginscreen')
+      $("#register-screen").fadeOut(200,'linear')
+      setTimeout(function() {
+        $('#register-screen').removeClass('modal-in')
+      }, 200);
+    },
+    re_first_focus:function(){
+      this.isFirst=true;
+    },
+    re_first_fn:function(){
+      this.re_first_null=false
+      $('#re_first_id').css({'border':'none','border-bottom':'1px solid #1B1B1B'})
+      if(this.re_first!=''){
+        this.isFirst=true;
+      }else{
+        this.isFirst=false;
+      }
+    },
+    re_last_focus:function(){
+      this.isLast=true;
+    },
+    re_last_fn:function(){
+      this.re_last_null=false
+      $('#re_last_id').css({'border':'none','border-bottom':'1px solid #1B1B1B'})
+      if(this.re_last!=''){
+        this.isLast=true;
+      }else{
+        this.isLast=false;
+      }
+    },
+    re_code_focus:function(){
+      this.isCode=true;
+    },
+    re_code_fn:function(){
+      this.re_code_null=false
+      $('#re_code_id').css({'border':'none','border-bottom':'1px solid #1B1B1B'})
+      if(this.re_code!=''){
+        this.isCode=true;
+      }else{
+        this.isCode=false;
+      }
+    },
+    register:function(){
+      if(this.re_first==''){
+        this.re_first_null=true
+        $('#re_first_id').css('border','1px solid #EA453D')
+      }else if(this.re_last==''){
+        this.re_last_null=true
+        $('#re_last_id').css('border','1px solid #EA453D')
+      }else if(this.re_number==''){
+        this.re_num_null=true
+        $('#re_number_id').css('border','1px solid #EA453D')
+      }else if(this.re_code==''){
+        this.re_code_null=true
+        $('#re_code_id').css('border','1px solid #EA453D')
+      }else if(this.re_password==''){
+        this.re_p_null=true
+        $('#re_password_id').css('border','1px solid #EA453D')
+      }else{
+        this.re_first_null=false
+        this.re_last_null=false
+        this.re_num_null=false
+        this.re_code_null=false
+        this.re_p_null=false
+      }
+    },
   },
   beforemount:function () {
-    // this.routeLink()
   },
   mounted:function () {
     this.fontSize()
-    this.routeLink()
   },
   beforeupdate:function () {
-    // console.log(888)
   },
   watch:{
     $route:'reload'
