@@ -42,7 +42,7 @@
           </div>
           <p>Please check your email and complete the verification process to reset your password</p>
         </div>
-        <f7-link class="rp_submit">Reset Password</f7-link>
+        <f7-link @click="sen_email()" class="rp_submit">Reset Password</f7-link>
       </div>
     </div>
   </f7-page>
@@ -66,6 +66,9 @@ export default {
       re_phone:function(){
         this.isEmail=false;
         this.isPhone=true;
+      },
+      sen_email:function(){
+
       },
     },
     mounted: function () {
