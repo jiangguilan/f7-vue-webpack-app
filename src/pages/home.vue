@@ -1,7 +1,7 @@
 <template>
   <f7-page name="home" pull-to-refresh @ptr:refresh="onRefresh">
     <f7-navbar>
-      <f7-searchbar
+      <!--<f7-searchbar
         cancel-link="Cancel"
         placeholder="Search in items"
         :clear-button="true"
@@ -11,7 +11,11 @@
         @searchbar:enable="onEnable"
         @searchbar:disable="onDisable"
         @searchbar:clear="onClear"
-      ></f7-searchbar>
+      ></f7-searchbar>-->
+      <div class="search">
+        <img src="static/img/search.png">
+        <input type="text" placeholder="What do you like?">
+      </div>
     </f7-navbar>
     <f7-toolbar labels>
       <f7-link href="/" icon-f7="home" text="Home"></f7-link>
@@ -20,9 +24,9 @@
       <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
       <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
     </f7-toolbar>
-    <f7-list class="searchbar-not-found">
+    <!--<f7-list class="searchbar-not-found">
       <f7-list-item title="Nothing found"></f7-list-item>
-    </f7-list>
+    </f7-list>-->
     <!--<f7-list class="searchbar-found" id="search-list">
       <f7-list-item v-for="(item,index) in items" :title="'Item ' + item" :key="index"></f7-list-item>
     </f7-list>-->

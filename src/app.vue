@@ -203,10 +203,17 @@ export default {
     reload: function () {
       this.search();
     },
+    tip:function(msg){
+      $(".tip").fadeIn(200,"linear")
+      $(".tip .text").html(msg)
+      setTimeout(function() {
+        $(".tip").fadeOut(200,"linear")
+      }, 2000);
+    },
     login: function () {
       var that=this;
-      var status="SUCCESS";
-      // var status="FAILUR";
+      // var status="SUCCESS";
+      var status="FAILUR";
       // var status="PHONE_UNVALID";//账号非法
       // var status="NO_REGISTERED";//没注册
       // var status="NUMBER_ERROR";//账号密码不匹配
@@ -221,11 +228,12 @@ export default {
         $(".ios .login_form input.input_name").css({"border":"none","border-bottom":"1px solid #B1B1B1"})
       }else if(status=="FAILUR"){
         that.isError=false;
-        $(".tip").fadeIn(200,"linear")
-        setTimeout(function() {
-          $(".tip").fadeOut(200,"linear")
-        }, 2000);
-        $(".tip .text").html("Login failed!Please check your account and password")//Login failed!Please check your account and password
+        this.tip("Login failed!Please check your account and password")
+        // $(".tip").fadeIn(200,"linear")
+        // setTimeout(function() {
+        //   $(".tip").fadeOut(200,"linear")
+        // }, 2000);
+        // $(".tip .text").html("Login failed!Please check your account and password")//Login failed!Please check your account and password
 
       }else if(status=="PHONE_UNVALID"){
         that.isError=true;

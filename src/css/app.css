@@ -320,6 +320,21 @@ div#register-screen .page-content {
 }
 .rp_bottom > div {
   margin: .2rem 0;
+  position: relative;
+}
+.rp_bottom > div span {
+  color: #A1A1A1;
+}
+.rp_bottom > div div div {
+  width: 3rem;
+  position: relative;
+}
+.rp_bottom > div div img {
+  width: .28rem;
+  height: .28rem;
+  position: absolute;
+  right: .1rem;
+  bottom: .1rem;
 }
 .rp_bottom > div > div {
   border-bottom: 1px solid #1B1B1B;
@@ -334,9 +349,9 @@ div#register-screen .page-content {
 .rp_bottom > div > div input.rp_code_input {
   width: 3rem;
 }
-.rp_send {
+.rp_bottom > div span.rp_send {
   display: inline-block;
-  width: 1.8rem;
+  width: 2.1rem;
   height: .52rem;
   background: #EA453D;
   color: #fff;
@@ -345,6 +360,7 @@ div#register-screen .page-content {
   position: absolute;
   right: 0;
   bottom: .1rem;
+  font-size: .2rem;
 }
 .rp_submit {
   width: 6rem;
@@ -357,7 +373,27 @@ div#register-screen .page-content {
   line-height: .8rem;
 }
 .rp_phone {
-  margin-top: 1.6rem;
+  margin-top: 1.2rem;
+}
+.search {
+  width: 7rem;
+  height: .56rem;
+  margin: 0 auto;
+  border-radius: .28rem;
+  background: #E9E9E9;
+  text-align: center;
+  line-height: .56rem;
+}
+.search input {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+}
+.search img {
+  width: 4%;
+  height: .28rem;
+  vertical-align: sub;
 }
 .ios .icon-back,
 .ios .icon-prev {
