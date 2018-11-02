@@ -32,7 +32,7 @@
               <img @click="del_text_p" v-show="isFocusP" src="static/img/login_del.png" alt="">
             </div>
           </div>
-          <f7-link @click="reset" class="rp_submit">Reset Password</f7-link>
+          <f7-link @click="reset" class="rp_submit">Submit</f7-link>
         </div>
       </div>
     </div>
