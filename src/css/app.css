@@ -314,43 +314,6 @@ div#register-screen .page-content {
   overflow: auto;
   height: 100%;
 }
-.rp_top {
-  margin-top: .88rem;
-  width: 100%;
-  height: .88rem;
-  background: #F1F1F1;
-  line-height: .88rem;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: .52rem;
-  overflow: hidden;
-}
-.rp_top span {
-  color: #1B1B1B;
-  font-size: .24rem;
-  position: relative;
-  cursor: pointer;
-}
-.rp_top span div {
-  width: 1rem;
-  height: 1rem;
-  background: #fff;
-  position: absolute;
-  top: .85rem;
-  left: -0.4rem;
-  transform: rotate(66deg);
-  -ms-transform: rotate(66deg);
-  /* IE 9 */
-  -moz-transform: rotate(66deg);
-  /* Firefox */
-  -webkit-transform: rotate(66deg);
-  /* Safari 和 Chrome */
-  -o-transform: rotate(66deg);
-  /* Opera */
-}
-.rp_top span div.rp_phone_deg {
-  left: .01rem;
-}
 .rp_bottom {
   width: 6rem;
   margin: 0 auto;
@@ -364,7 +327,7 @@ div#register-screen .page-content {
   position: relative;
 }
 .rp_bottom > div > div input {
-  width: 5rem;
+  width: 100%;
   display: inline-block;
   margin-bottom: .1rem;
 }
@@ -393,19 +356,8 @@ div#register-screen .page-content {
   text-align: center;
   line-height: .8rem;
 }
-.rp_email {
-  width: 6rem;
-  margin: 0 auto;
-}
-.rp_email_box {
-  margin-top: .52rem;
-}
-.rp_email_box > div {
-  border-bottom: 1px solid #1B1B1B;
-  margin-bottom: .2rem;
-}
-.rp_email_box > div input {
-  margin: .2rem 0 .1rem;
+.rp_phone {
+  margin-top: 1.6rem;
 }
 .ios .icon-back,
 .ios .icon-prev {
