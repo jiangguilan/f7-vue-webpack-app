@@ -327,7 +327,7 @@ div#register-screen .page-content {
 .search {
   width: 7rem;
   height: .56rem;
-  margin: 0 .24rem;
+  margin: 0 auto;
   border-radius: .28rem;
   background: #E9E9E9;
   text-align: center;
@@ -375,6 +375,7 @@ div#register-screen .page-content {
   line-height: .88rem;
   width: 100%;
   z-index: 100;
+  border-bottom: 1px solid #D8D8D8;
 }
 .search_box > span.hs_cancle {
   position: absolute;
@@ -664,6 +665,35 @@ div#register-screen .page-content {
   height: .2rem;
 }
 .home_recommend .re_intro .re_star span {
+  font-size: .14rem;
+}
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  height: .96rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: .08rem;
+  box-sizing: border-box;
+  z-index: 100;
+  border-top: 1px solid #D8D8D8;
+}
+.bottom .bottom_item {
+  display: inline-block;
+  text-align: center;
+  text-align: -webkit-center;
+}
+.bottom .bottom_item div {
+  width: .56rem;
+  height: .56rem;
+}
+.bottom .bottom_item.active span {
+  color: #1B1B1B;
+}
+.bottom .bottom_item span {
+  color: #707070;
   font-size: .14rem;
 }
 ._block {

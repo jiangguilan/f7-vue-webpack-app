@@ -16,6 +16,7 @@ import AccountPage from './pages/account.vue';
 import LoginTestLang from './pages/login-test-lang.vue';
 import DetailsPage from './pages/details.vue';
 import reset_password from './pages/reset_password.vue';
+import search from './pages/search.vue'
 
 export default [
   {
@@ -73,6 +74,10 @@ export default [
   {
     path: '/reset_password',
     component: reset_password,
+  },
+  {
+    path: '/search',
+    component: search,
   },
   {
     path: '(.*)',

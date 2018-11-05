@@ -9,6 +9,7 @@
 @defaultInputColor:#1B1B1B;
 @defaultBg:#E9E9E9;
 @linkTipColor:#8C8C8C;
+@borderColor:#D8D8D8;
 
 *{
     font-size: .24rem;
@@ -453,7 +454,7 @@ background-size:cover;
 .search{
     width: 7rem;
     height: .56rem;
-    margin:0 .24rem;
+    margin:0 auto;
     border-radius: .28rem;
     background: @defaultBg;
     text-align: center;
@@ -461,6 +462,7 @@ background-size:cover;
     position: relative;
     top: .145rem;
     transition-duration: 300ms;
+
 }
 .search.active{
     width: 6.1rem;
@@ -500,6 +502,7 @@ background-size:cover;
     line-height: .88rem;
     width: 100%;
     z-index: 100;
+    border-bottom: 1px solid @borderColor;
 }
 .search_box>span.hs_cancle {
     position: absolute;
@@ -804,13 +807,35 @@ background-size:cover;
     font-size: .14rem;
 }
 // home bottom
-// .ios .tabbar-labels{
-//     height: .96rem;
-// }
-// .ios .link i + span{
-//     font-size: .14rem;
-//     color: @linkTipColor;
-// }
+.bottom{
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    height: .96rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: .08rem;
+    box-sizing: border-box;
+    z-index: 100;
+    border-top: 1px solid @borderColor;
+}
+.bottom .bottom_item{
+    display: inline-block;
+    text-align: center;
+    text-align: -webkit-center;
+}
+.bottom .bottom_item div{
+    width: .56rem;
+    height: .56rem;
+}
+.bottom .bottom_item.active span{
+    color: @defaultInputColor;
+}
+.bottom .bottom_item span{
+    color: @tipTextColor;
+    font-size: .14rem;
+}
 
 
 // common

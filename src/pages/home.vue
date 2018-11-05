@@ -1,27 +1,28 @@
 <template>
   <f7-page name="home">
-    <div class="search_box">
-      <div @click="triger_search" class="search">
-        <div>
-          <img src="static/img/search.png">
-          <input v-model="hs_text" @focus="hs_focus" @blur="hs_blur" type="text" placeholder="What do you like?">  
-        </div>
-        <img v-show="hs_isFocus" @click="del_hs_text" class="hs_del_text" src="static/img/login_del.png">
-      </div>
-      <span @click="cancle_search" class="hs_cancle">Cancle</span>  
+    <div class="search_box hs">
+      <div class="search"> 
+        <a href="/search">
+          <div>
+            <img src="static/img/search.png">
+            <input type="text" placeholder="What do you like?">  
+          </div>
+        </a>
+      </div> 
     </div>
-    <!--<f7-toolbar labels>
-      <f7-link href="/" icon-f7="home" text="Home"></f7-link>
-      <f7-link href="/category" icon-f7="data" text="Category"></f7-link>
-      <f7-link href="/explore" icon-f7="compass" text="Explore"></f7-link>
-      <f7-link href="/cart" icon-f7="bag" text="Cart"></f7-link>
-      <f7-link href="/account" icon-f7="person" text="Account"></f7-link>
-    </f7-toolbar>-->
-    <!--search history-->
-    <div v-show="hs_history_show" @click="show_history" class="search_history clear">
+    <!--<div v-show="hs_history_show" @click="show_history" class="search_history clear">
       <div class="s_hot">
         <p>
           <img src="static/img/hot_sale.png">
+          Hot sale
+        </p>
+        <div>
+          <span v-for="(item,index) in history.hot_sale" :key="index" @click="choose_tip(index)" :data-id="index">{{item}}</span>
+        </div>
+      </div>
+      <div class="s_hot">
+        <p>
+          <img src="static/img/clock.png">
           Search History
           <img class="rt" src="static/img/del_history.png" alt="">
         </p>
@@ -29,7 +30,7 @@
           <span v-for="(item,index) in history.history" :key="index" @click="choose_his(index)" :data-id="index">{{item}}</span>
         </div>
       </div>
-    </div>
+    </div>-->
     <div class="content">
       <f7-swiper class="banner" pagination :params="{speed:500}">
         <!--autoplay:{delay:2000,disableOnInteraction:false},-->
@@ -772,12 +773,38 @@
       </div>
 
       <div class="bottom">
-        
-        <div>
-          <a href="/details">
-            detalis
-          </a>
-        </div>
+        <a href="/home">
+          <div class="bottom_item active">
+              <div>
+                <img src="static/img/bottom_home_active.png">
+              </div>
+              <span>Home</span>
+          </div>
+        </a>
+        <a href="/category">
+          <div class="bottom_item">
+              <div>
+                <img src="static/img/bottom_categories_unactive.png">
+              </div>
+              <span>categories</span>
+          </div>
+        </a>
+        <a href="/cart">
+          <div class="bottom_item">
+              <div>
+                <img src="static/img/bottom_cart_unactive.png">
+              </div>
+              <span>Cart</span>
+          </div>
+        </a>
+        <a href="/account">
+          <div class="bottom_item">
+              <div>
+                <img src="static/img/bottom_account_unactive.png">
+              </div>
+              <span>Account</span>
+          </div>
+        </a>
       </div>
 
     </div>
@@ -787,70 +814,70 @@
 export default {
     data: function () {
       return {
-        hs_isFocus:false,
-        hs_text:'',
-        hs_history_show:false,
-        history:{'hot_sale':['shoes','wowen underwear only $89','fashion','shoes','wowen underwear only $89','fashion',],'history':['shoes1','wowen underwear only $892','fashion3',]},
+        // hs_isFocus:false,
+        // hs_text:'',
+        // hs_history_show:false,
+        // history:{'hot_sale':['shoes','wowen underwear only $89','fashion','shoes','wowen underwear only $89','fashion',],'history':['shoes1','wowen underwear only $892','fashion3',]},
       }
     },
     methods: {
-      triger_search:function(){
-        $('.search input').focus()
-      },
-      hs_focus:function(){
-        $('.search').addClass('active')
-        $('.hs_cancle').addClass('active')
-        if(!$('.search input').hasClass('focus')){
-          $('.search input').addClass('focus')
-        }
-        this.hs_isFocus=true;
-        this.hs_history_show=true;
-        // $('.search_history').fadeIn(300,'linear')
-      },
-      hs_blur:function(){
-        $('.search').removeClass('active')
-        $('.hs_cancle').removeClass('active')
-        if(this.hs_text==''){
-          this.hs_isFocus=false
-          this.hs_history_show=false;
-          // $('.search_history').fadeOut(300,'linear')
-          $('.search input').removeClass('focus')
-        }else{
-          this.hs_isFocus=true
-          this.hs_history_show=true
-          // $('.search_history').fadeIn(300,'linear')
-          if(!$('.search input').hasClass('focus')){
-            $('.search input').addClass('focus')
-          }
-        }
-      },
-      del_hs_text:function(){
-        this.hs_text=''
-      },
-      show_history:function(){
-        $('.search input').focus()
-        // $('.search_history').fadeIn(1,'linear')
-      },
-      choose_tip:function(e){
-        this.hs_text=this.history.hot_sale[e]
-      },
-      choose_his:function(e){
-        this.hs_text=this.history.history[e]
-      },
-      cancle_search:function(){
-        this.hs_text=""
-        $('.search input').blur()
-        this.hs_history_show=false
-        // $('.search_history').fadeOut(300,'linear')
-      },
+      // triger_search:function(){
+      //   $('.search input').focus()
+      // },
+      // hs_focus:function(){
+      //   $('.search').addClass('active')
+      //   $('.hs_cancle').addClass('active')
+      //   if(!$('.search input').hasClass('focus')){
+      //     $('.search input').addClass('focus')
+      //   }
+      //   this.hs_isFocus=true;
+      //   this.hs_history_show=true;
+      //   // $('.search_history').fadeIn(300,'linear')
+      // },
+      // hs_blur:function(){
+      //   $('.search').removeClass('active')
+      //   $('.hs_cancle').removeClass('active')
+      //   if(this.hs_text==''){
+      //     this.hs_isFocus=false
+      //     this.hs_history_show=false;
+      //     // $('.search_history').fadeOut(300,'linear')
+      //     $('.search input').removeClass('focus')
+      //   }else{
+      //     this.hs_isFocus=true
+      //     this.hs_history_show=true
+      //     // $('.search_history').fadeIn(300,'linear')
+      //     if(!$('.search input').hasClass('focus')){
+      //       $('.search input').addClass('focus')
+      //     }
+      //   }
+      // },
+      // del_hs_text:function(){
+      //   this.hs_text=''
+      // },
+      // show_history:function(){
+      //   $('.search input').focus()
+      //   // $('.search_history').fadeIn(1,'linear')
+      // },
+      // choose_tip:function(e){
+      //   this.hs_text=this.history.hot_sale[e]
+      // },
+      // choose_his:function(e){
+      //   this.hs_text=this.history.history[e]
+      // },
+      // cancle_search:function(){
+      //   this.hs_text=""
+      //   $('.search input').blur()
+      //   this.hs_history_show=false
+      //   // $('.search_history').fadeOut(300,'linear')
+      // },
     },
     mounted: function () {
-      $("#home-searchbar").css("display","block")
-      $("#category-searchbar").css("display","none")
-      $('.search_history').click(function(){
-        console.log(12121)
-        $('.search input').focus()
-      })
+      // $("#home-searchbar").css("display","block")
+      // $("#category-searchbar").css("display","none")
+      // $('.search_history').click(function(){
+      //   console.log(12121)
+      //   $('.search input').focus()
+      // })
     },
     watch: {
     },
