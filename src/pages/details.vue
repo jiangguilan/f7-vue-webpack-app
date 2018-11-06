@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <div class="detail">
+    <div id="detail" class="detail">
       <div class="top">
         <div class="nav nav_fixed">
           <f7-link back class="back lt">
@@ -13,7 +13,7 @@
             <img src="static/img/btn_share.png">
           </span>
         </div>
-        <div class="pro clear">
+        <div class="pro clear nav_fixed">
           <img src="static/img/detail_1.png" class="lt">
           <div class="lt">
             <p>RM:199</p>
@@ -320,15 +320,15 @@
         </div>
 
       </div>
-      <div class="bottom tool_fixed">
-        <a class="to_cart">
+      <div class="bottom tool_fixed clear">
+        <a class="to_cart lt">
           <img src="static/img/btn_cart.png">
         </a>
-        <span class="server">
+        <span class="server lt">
           <img src="static/img/btn_service.png">
         </span>
-        <span class="add_btn">Add to cart</span>
-        <span class="buynow">Buy Now</span>
+        <span class="add_btn rt">Add to cart</span>
+        <span class="buynow rt">Buy Now</span>
       </div>
     </div>
   </f7-page>
@@ -344,6 +344,18 @@ export default {
   methods: {
   },
   mounted: function () {
+    $('#detail').scroll(function(){
+      // console.log($('#detail')[0].scrollTop,$('#detail')[0].scrollHeight)
+      if($('#detail')[0].scrollTop>0){
+        // console.log(1)
+        $('.detail .action_icon').fadeOut(300,'linear')
+        $('.detail .top').fadeIn(300,'linear')
+      }else{
+        // console.log(2)
+        $('.detail .action_icon').fadeIn(300,'linear')
+        $('.detail .top').fadeOut(300,'linear')
+      }
+    })
   }
 }
 </script>
