@@ -594,6 +594,11 @@
       </div>
 
       <div class="_block home_recommend">
+        <div class="_block title">
+          <span class="dian"></span>
+          <span>JUST FOR YOU</span>
+          <span class="dian"></span>
+        </div>
         <ul>
           <li>
             <div class="re_img">

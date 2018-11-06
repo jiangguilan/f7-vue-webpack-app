@@ -460,9 +460,12 @@ background-size:cover;
     text-align: center;
     line-height: .56rem;
     position: relative;
-    top: .145rem;
+    top: .16rem;
     transition-duration: 300ms;
-
+}
+.search.flash{
+    display: inline-block;
+    width: 6.52rem;
 }
 .search.active{
     width: 6.1rem;
@@ -756,9 +759,28 @@ background-size:cover;
 }
 
 // home recommend
+.home_recommend .title{
+    text-align: center;
+}
+.home_recommend .title span{
+    color: @defaultInputColor;
+}
+.home_recommend .title .dian{
+    display: inline-block;
+    width: .08rem;
+    height: .08rem;
+    border-radius: 50%;
+    background: -moz-linear-gradient(top,#EA453D,#EE8E3A);
+    background: -o-linear-gradient(top,#EA453D,#EE8E3A);
+    background: -webkit-linear-gradient(top,#EA453D,#EE8E3A);
+    position: relative;
+    top: -0.04rem;
+}
 .home_recommend ul{
     padding: 0;
     text-align: center;
+    margin-bottom: 1.06rem;
+    margin-top: .12rem;
 }
 .home_recommend ul li{
     display: inline-block;
@@ -780,11 +802,13 @@ background-size:cover;
     color: @defaultInputColor;
     font-size: .18rem;
 }
-.home_recommend .re_intro .price .sold_price:last-child{
+.home_recommend .re_intro .price .sold_price span:last-child{
     font-size: .24rem;
     font-weight: bold;
 }
 .home_recommend .re_intro .price .origin_price{
+    font-size: .18rem;
+    text-decoration:line-through;
     color: @linkTipColor;
 }
 .home_recommend .re_intro .re_title{
@@ -837,8 +861,83 @@ background-size:cover;
     font-size: .14rem;
 }
 
+// flash
+.search_box.hs .back{
+    width: .48rem;
+    height: .48rem;
+    display: inline-block;
+    background: url('../../static/img/btn_more.png') no-repeat center;
+    background-size:contain; 
+    margin: .2rem .11rem 0 .11rem;
+    transform: scale(-1,1);
+}
+.content.flash .title{
+    background: #fff;
+    padding: .2rem .24rem;
+    box-sizing: border-box;
+}
+.content.flash .title p{
+    margin-top: .1rem;
+    font-size: .2rem;
+}
+.flash_product .title{
+    background: #fff;
+    padding: .2rem .24rem;
+    box-sizing: border-box;
+    color: @defaultInputColor;
+}
+.flash_product .title .select{
+    width: .32rem;
+    height: .32rem;
+    margin-left: .12rem;
+    position: relative;
+}
+.flash_product .title .select span{
+    display: inline-block;
+    width: 100%;
+    height: .16rem;
+    position: absolute;
+    top: 0;
+    background: url('../../static/img/btn_price_up_active.png') no-repeat center;
+    background-size: contain;
+}
+.flash_product .title .select span:last-child{
+    background: url('../../static/img/btn_price_down.png') no-repeat center;
+    top: .16rem;
+    bottom: 0;
+    background-size: contain;
+}
+.flash_product.home_recommend ul{
+    margin-bottom: .2rem;
+}
+.flash_product .flash_title{
+    padding: .4rem 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.flash_product .flash_title div{
+    margin-top: .2rem;
+}
+.flash_product .flash_title p{
+    color: @defaultInputColor;
+}
+.flash_product .flash_title div span{
+    display: inline-block;
+    width: .64rem;
+    height: .64rem;
+    background: @defaultInputColor;
+    text-align: center;
+    line-height: .64rem;
+    border-radius: .08rem;
+    color: #EE8E3A;
+    margin: 0 .2rem;
+}
+
 
 // common
+.ios .navbar ~ *:not(.no-navbar) .page-content{
+    padding-top: 0;
+}
 ._block {
     margin: .2rem 0 0;
     color: #6d6d72;
