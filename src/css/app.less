@@ -765,7 +765,7 @@ background-size:cover;
 .home_recommend .title span{
     color: @defaultInputColor;
 }
-.home_recommend .title .dian{
+.home_recommend .title .dian,.title .dian{
     display: inline-block;
     width: .08rem;
     height: .08rem;
@@ -1075,7 +1075,7 @@ background-size:cover;
 .guarancetee span{
     color: @defaultInputColor;
 }
-.detail .option,.detail .review .title{
+.detail .option,.detail .review .title,._title{
     height: .88rem;
     background: #fff;
     padding: .24rem .24rem;
@@ -1100,6 +1100,9 @@ background-size:cover;
 .detail .review ul li{
     padding: .3rem 0;
     box-sizing: border-box;
+}
+.detail .review ul li:last-child{
+    border-bottom: none;
 }
 .detail .review ul li div{
     position: relative;
@@ -1139,6 +1142,58 @@ background-size:cover;
     -webkit-box-orient: vertical;
     -webkit-line-clamp:2; 
     // margin:.3rem 0;
+}
+.detail .pro_detail .title{
+    text-align: center;
+    margin: .4rem 0 .12rem;
+} 
+.detail .pro_detail .title span{
+    color: @defaultInputColor;
+}
+.detail .home_recommend ul{
+    margin-top: 0;
+}
+.tool_fixed{
+    border-top: 1px solid @linkTipColor;
+}
+.detail .bottom{
+    width: 100%;
+    height: 1rem;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+}
+.detail .bottom .to_cart{
+    display: inline-block;
+    width: 1.27rem;
+    height: 100%;
+    border-right: .01rem solid @linkTipColor;
+    line-height: 1rem;
+    text-align: center;
+}
+.detail .bottom .server{
+    display: inline-block;
+    width: 1.26rem;
+    height: 100%;
+    line-height: 1rem;
+    text-align: center;
+}
+.detail .bottom .to_cart img,.detail .bottom .server img{
+    width: .56rem;
+    height: .56rem;
+}
+.detail .bottom .add_btn,.detail .bottom .buynow{
+    display: inline-block;
+    width: 2.48rem;
+    height: 100%;
+    background:#EE8E3A; 
+    color:#fff;
+    line-height: 1rem;
+    text-align: center;
+}
+.detail .bottom .buynow{
+    background: #EA453D;
 }
 
 

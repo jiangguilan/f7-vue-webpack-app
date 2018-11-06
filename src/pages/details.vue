@@ -125,7 +125,210 @@
             </li>
           </ul>
         </div>
+        <div class="pro_detail">
+          <div class="_title">
+            Product Details
+          </div>
+          <div class="pro_img">
+            <img src="static/img/detail_1.png" >
+            <img src="static/img/detail_2.png" >
+            <img src="static/img/detail_3.png" >
+          </div>
+          <div class="_block title">
+            <span class="dian"></span>
+            <span>JUST FOR YOU</span>
+            <span class="dian"></span>
+          </div>
+          <div class="home_recommend">
+            <ul>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                <li>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="re_img">
+                    <img src="static/img/women_product.png">
+                    </div>
+                    <div class="re_intro">
+                    <div class="price">
+                        <span class="sold_price">
+                        <span>RM</span>
+                        <span>: 199</span>
+                        </span>
+                        <span class="origin_price">
+                        RM:284
+                        </span>
+                    </div>
+                    <p class="re_title">
+                        Forever 21 Bag for you you oyu oyuyuyoyo 
+                    </p>
+                    <div class="re_star">
+                        <div>
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_active.png">
+                        <img src="static/img/star_unactive.png">                                    
+                        </div>
+                        <span>4.0</span>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </div>
 
+      </div>
+      <div class="bottom tool_fixed">
+        <a class="to_cart">
+          <img src="static/img/btn_cart.png">
+        </a>
+        <span class="server">
+          <img src="static/img/btn_service.png">
+        </span>
+        <span class="add_btn">Add to cart</span>
+        <span class="buynow">Buy Now</span>
       </div>
     </div>
   </f7-page>
