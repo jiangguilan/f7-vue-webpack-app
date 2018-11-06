@@ -1,13 +1,133 @@
 <template>
   <f7-page>
-    <f7-navbar title="details" back-link="Back"></f7-navbar>
-    <f7-block-title>details My App</f7-block-title>
-    <f7-block strong>
-      <p id="title">Here is details page!</p>
-      <p>You can go <f7-link back>back</f7-link>.</p>
-      <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>
-      <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
-    </f7-block>
+    <div class="detail">
+      <div class="top">
+        <div class="nav nav_fixed">
+          <f7-link back class="back lt">
+            <img src="static/img/nav_back.png">
+          </f7-link>
+          <span class="heart_icon rt">
+            <img src="static/img/btn_wishlist.png">
+          </span>
+          <span class="share_icon rt">
+            <img src="static/img/btn_share.png">
+          </span>
+        </div>
+        <div class="pro clear">
+          <img src="static/img/detail_1.png" class="lt">
+          <div class="lt">
+            <p>RM:199</p>
+            <div>New product name name New product name name New product name name New product name name New product name name </div>
+          </div>
+        </div>
+      </div>
+      <div class="action_icon">
+        <f7-link back class="back">
+          <img src="static/img/nav_back_active.png">
+        </f7-link>
+        <div class="share_heart">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="detail_intro">
+        <f7-swiper class="banner" pagination :params="{speed:500}">
+            <!--autoplay:{delay:2000,disableOnInteraction:false},-->
+            <f7-swiper-slide v-for="(item,index) in banner" :key="index"><a> <img :src="item"> </a></f7-swiper-slide>
+        </f7-swiper>  
+        <div class="intro">
+          <div class="price clear">
+            <span class="sold_price lt">RM:259</span>
+            <span class="origin_price lt">RM:625</span>
+            <span class="rt store">
+              <span>
+                <img src="static/img/star_active.png">
+                <img src="static/img/star_active.png">
+                <img src="static/img/star_active.png">
+                <img src="static/img/star_active.png">
+                <img src="static/img/star_unactive.png">
+              </span>
+              <span>4.0</span>  
+            </span>
+          </div>
+          <p class="pro_name">Product nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct nameProduct name</p>
+          <div class="hot">
+            <span>Warn Clothing</span>
+            <span>style Jacket</span>
+            <span>Warn Clothing</span>
+            <span>style Jacket</span>
+            <span>style Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacketstyle Jacket</span>
+            <span>warn</span>
+          </div>
+        </div>
+        <div class="_block guarancetee">
+          <f7-swiper :params="{speed:500, slidesPerView: 2.3}">
+              <f7-swiper-slide>
+                <img src="static/img/icon_guarantee.png">
+                <span>Genuine Guarantee</span>
+              </f7-swiper-slide>
+              <f7-swiper-slide>
+                <img src="static/img/icon_7days.png">
+                <span>7 Days Hassle Free</span>
+              </f7-swiper-slide>
+              <f7-swiper-slide>
+                <img src="static/img/icon_delivery.png">
+                <span>Cash on Delivery</span>
+              </f7-swiper-slide>
+              <f7-swiper-slide>
+                <img src="static/img/icon_shipping.png">
+                <span>Free Shipping</span>
+              </f7-swiper-slide>
+          </f7-swiper>  
+        </div>
+        <div class="_block option clear">
+          <span>Available Options</span>
+          <img class="rt" src="static/img/btn_more.png">
+        </div>
+        <div class="_block review">
+          <div class="title nav_fixed clear">
+            <span>Reviews</span>
+            <span class="view rt">
+                View More
+              <img src="static/img/btn_more.png">
+            </span>
+          </div>
+          <ul>
+            <li class="nav_fixed">
+              <div class="clear">
+                <img class="user_avartar" src="static/img/reviews_user.png" >
+                <span class="user_name">Gunsf SimonGunsf SimonGunsf Simon</span>
+                <span class="star">
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_unactive.png" >
+                </span>
+                <span class="time">2018.11.16</span>
+              </div>
+              <p>ReviewR evie wRe vi ewRe vie wRe view R evie wReviewR eviewRe viewReviewRe vie wReviewRe viewRe viewR eviewRev  iewRevie wRevi ewRevie wR eview Revi ewReviewR eviewReview </p>
+            </li>
+            <li class="nav_fixed">
+              <div class="clear">
+                <img class="user_avartar" src="static/img/reviews_user.png" >
+                <span class="user_name">Gunsf SimonGunsf SimonGunsf Simon</span>
+                <span class="star">
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_active.png" >
+                  <img src="static/img/star_unactive.png" >
+                </span>
+                <span class="time">2018.11.16</span>
+              </div>
+              <p>ReviewR evie wRe vi ewRe vie wRe view R evie wReviewR eviewRe viewReviewRe vie wReviewRe viewRe viewR eviewRev  iewRevie wRevi ewRevie wR eview Revi ewReviewR eviewReview </p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </f7-page>
 </template>
 
@@ -15,38 +135,12 @@
 export default {
   data: function () {
     return {
-
+          banner:['static/img/detail_1.png','static/img/detail_2.png'],
     }
   },
   methods: {
-    
-    isEmptyObject:function (e) {
-      var t;
-      for (t in e)
-        return !1;
-      return !0
-    }
   },
   mounted: function () {
-    var $$=this.Dom7;
-    $$("#home-searchbar").css("display","none")
-    $$("#category-searchbar").css("display","none")
-    console.log(this.$f7route,this.$f7route.params)
-    
-    console.log(this.isEmptyObject(this.$f7route.params));
-    
-    if(this.isEmptyObject(this.$f7route.params)){
-      // 地址栏有参数，页面从分享链接进来 http://localhost:8080/details?products=P001200&user=1
-      // console.log(this.Dom7.parseUrlQuery('http://google.com/?id=5&foo=bar'))
-      console.log(window.location.search)//"?products=P001200&user=1"
-      // this.$f7.$$.get('https://cod.api.dev.bz-bss.com/products/productsList',function(data){
-      //   console.log(11,data)
-      // })
-    }
-    else{
-      // 地址栏没有参数 http://localhost:8080 数据从this.$f7route.params拿
-      console.log(this.$f7route.params)
-    }
   }
 }
 </script>

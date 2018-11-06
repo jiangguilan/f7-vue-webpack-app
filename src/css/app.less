@@ -862,14 +862,17 @@ background-size:cover;
 }
 
 // flash
-.search_box.hs .back{
+.search_box.hs .back,.back{
     width: .48rem;
     height: .48rem;
     display: inline-block;
-    background: url('../../static/img/btn_more.png') no-repeat center;
+    // background: url('../../static/img/btn_more.png') no-repeat center;
     background-size:contain; 
     margin: .2rem .11rem 0 .11rem;
-    transform: scale(-1,1);
+    // transform: scale(-1,1);
+}
+.back img{
+    vertical-align: top;
 }
 .content.flash .title{
     background: #fff;
@@ -933,8 +936,216 @@ background-size:cover;
     margin: 0 .2rem;
 }
 
+// details common
+.detail .top{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+    z-index: 100;
+}
+.detail .top .nav{
+    width: 100%;
+    height: .88rem;
+    background: #fff;
+    line-height: .88rem;
+}
+.detail .top .nav .back{
+    width: .68rem;
+    height: .68rem;
+    margin: 0.1rem 0.2rem .1rem .02rem;
+    background: none;
+}
+.detail .top .heart_icon{
+    margin-right: .32rem;
+}
+.detail .top .nav .share_icon,.detail .top .heart_icon{
+    display: inline-block;
+    width: .48rem;
+    height: .48rem;
+    margin-left: .32rem;
+    cursor: pointer;
+}
+.detail .top .pro{
+    padding: .2rem .24rem;
+    box-sizing: border-box;
+    background: #fff;
+}
+.detail .top .pro img{
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: .2rem;
+}
+.detail .top .pro div{
+    width: 5.3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: .4rem;
+}
+.detail .top .pro p{
+    font-size: .2rem;
+}
+.nav_fixed{
+    border-bottom: 1px solid @borderColor;
+}
+.detail .action_icon{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: .88rem;
+    z-index: 100;
+}
+.detail .action_icon .back{
+    width:.67rem;
+    height: .68rem;
+    margin-left: .02rem;
+    margin-top: .1rem;
+}
+.detail .action_icon .share_heart{
+    display: inline-block;
+    width: 1.6rem;
+    height: .64rem;
+    margin-right: .24rem;
+    background: url('../../static/img/share_Wishlist.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    right: .24rem;
+    top: .1rem;
+}
+.detail .intro{
+    padding: .3rem .24rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+.detail .intro .price{
+    line-height: .32rem;
+}
+.detail .intro .price .sold_price{
+    font-size: .32rem;
+    color: @mainRed;
+    margin-right: .1rem;
+}
+.detail .intro .price .origin_price{
+    font-size: .18rem;
+    text-decoration: line-through;
+    color: @linkTipColor;
+}
+.detail .intro .price .store{
+    margin-right: .24rem;
+}
+.detail .intro .price .store span img{
+    width: .32rem;
+    height: .32rem;
+    vertical-align: sub;
+}
+.detail .intro .price .store span{
+    font-size: .2rem;
+}
+.detail .intro .pro_name{
+    margin: .3rem 0 .2rem;
+}
+.detail .intro .hot span{
+    display: inline-block;
+    max-width: 7rem;
+    min-width: .3rem;
+    padding: 0 .1rem;
+    box-sizing: border-box;
+    border: 1px solid @linkTipColor;
+    color: @linkTipColor;
+    height: .44rem;
+    line-height: .44rem;
+    margin: .1rem .1rem 0 0;
+    border-radius: .08rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.guarancetee{
+    height: .88rem;
+    line-height: .88rem;
+    background: #fff;
+}
+.guarancetee img{
+    width: .44rem;
+    height: .44rem;
+    margin-left: .2rem;
+}
+.guarancetee span{
+    color: @defaultInputColor;
+}
+.detail .option,.detail .review .title{
+    height: .88rem;
+    background: #fff;
+    padding: .24rem .24rem;
+    box-sizing: border-box;
+}
+.detail .option span,.detail .review .title span{
+    color: @defaultInputColor;
+}
+.detail .option img,.detail .review .title span.view img{
+    width: .32rem;
+    height: .32rem;
+}
+.detail .review .title span.view{
+    font-size: .18rem;
+    color: @linkTipColor;
+}
+.detail .review ul {
+    padding: .3rem .24rem;
+    box-sizing: border-box;
+    background: #fff;
+}
+.detail .review ul li{
+    padding: .3rem 0;
+    box-sizing: border-box;
+}
+.detail .review ul li div{
+    position: relative;
+}
+.detail .review ul li div .user_avartar{
+    height: .58rem;
+    width: .58rem;
+    margin-right: .1rem;
+}
+.detail .review ul li div .user_name{
+    color: @linkTipColor;
+    font-size: .18rem;
+    margin-right: .4rem;
+    display: inline-block;
+    width: 2.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    top: .1rem;
+}
+.detail .review ul li div .star img{
+    width: .24rem;
+    height: .24rem;
+}
+.detail .review ul li div .time{
+    font-size: .18rem;
+    position: absolute;
+    right: 0;
+    top: .13rem;
+}
+.detail .review ul li p{
+    font-size: .2rem;
+    color: @defaultInputColor;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2; 
+    // margin:.3rem 0;
+}
+
 
 // common
+ul li{
+    list-style: none;
+}
 .ios .navbar ~ *:not(.no-navbar) .page-content{
     padding-top: 0;
 }

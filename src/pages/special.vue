@@ -1,7 +1,9 @@
 <template>
   <f7-page name="special">
       <div class="search_box hs">
-          <f7-link class="back lt" back></f7-link>
+          <f7-link class="back lt" back>
+              <img src="static/img/nav_back.png">
+          </f7-link>
           <div class="search flash lt"> 
             <a href="/search">
                 <div>
