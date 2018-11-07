@@ -125,7 +125,7 @@
             </li>
           </ul>
         </div>
-        <div class="pro_detail">
+        <div class="_block pro_detail">
           <div class="_title">
             Product Details
           </div>

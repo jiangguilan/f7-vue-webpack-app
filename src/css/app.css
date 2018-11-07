@@ -1,5 +1,5 @@
 * {
-  font-size: .24rem;
+  font-size: 0.3rem;
 }
 .rt {
   float: right;
@@ -35,7 +35,7 @@ img {
 }
 #label_name,
 #label_password {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #A1A1A1;
   position: absolute;
 }
@@ -52,11 +52,11 @@ img {
   color: #EA453D;
   padding-left: .2rem;
   padding-right: .2rem;
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 .ios .login_form input[type="text"],
 .ios .login_form input[type="password"] {
-  font-size: .24rem;
+  font-size: 0.3rem;
   height: .52rem;
   width: 100%;
   color: #1B1B1B;
@@ -82,7 +82,7 @@ img {
 }
 .forget_link a span {
   color: #707070;
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 li#sign_in a {
   width: 6rem;
@@ -90,7 +90,7 @@ li#sign_in a {
   background: #EA453D;
   line-height: 0.8rem;
   color: #fff;
-  font-size: 0.24rem;
+  font-size: 0.3rem;
   margin: 1rem auto .4rem;
   padding: 0;
 }
@@ -118,7 +118,7 @@ p.way_tip {
 }
 .block-footer p:first-child:last-child {
   color: #707070;
-  font-size: 0.24rem;
+  font-size: 0.3rem;
   margin-bottom: .3rem;
 }
 .login_way_box img {
@@ -128,7 +128,7 @@ p.way_tip {
 }
 .new_customer_link {
   color: #707070;
-  font-size: 0.24rem;
+  font-size: 0.3rem;
 }
 .new_customer_link a span {
   color: #EA453D;
@@ -144,7 +144,7 @@ div#register-screen .page-content {
   background: #EA453D;
   color: #fff;
   text-align: center;
-  font-size: .32rem;
+  font-size: 0.38rem;
   width: 100%;
   height: .88rem;
   line-height: .88rem;
@@ -174,12 +174,12 @@ div#register-screen .page-content {
   width: 100%;
   margin: .2rem 0 .1rem;
   color: #1B1B1B;
-  font-size: .24rem;
+  font-size: 0.3rem;
   height: .52rem;
   border-bottom: 1px solid #707070;
 }
 .re_input > div span {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #A1A1A1;
 }
 .re_input > div img {
@@ -190,7 +190,7 @@ div#register-screen .page-content {
   right: .08rem;
 }
 .re_input > div p {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #EA453D;
   margin: 0;
 }
@@ -201,14 +201,14 @@ div#register-screen .page-content {
   line-height: .8rem;
   text-align: center;
   margin-bottom: 1.1rem;
-  font-size: .24rem;
+  font-size: 0.3rem;
   background: #EA453D;
 }
 .re_bottom .re-complete span {
   color: #fff;
 }
 .re_bottom > div {
-  font-size: .24rem;
+  font-size: 0.3rem;
   color: #1B1B1B;
   text-align: center;
 }
@@ -232,7 +232,7 @@ div#register-screen .page-content {
 }
 .tip .text {
   color: #fff;
-  font-size: .24rem;
+  font-size: 0.3rem;
   text-align: center;
   margin-top: .1rem;
 }
@@ -246,7 +246,7 @@ div#register-screen .page-content {
   color: #fff;
   text-align: center;
   line-height: .88rem;
-  font-size: .24rem;
+  font-size: 0.3rem;
 }
 .rp_nav a {
   display: inline-block;
@@ -309,7 +309,7 @@ div#register-screen .page-content {
   position: absolute;
   right: 0;
   bottom: .1rem;
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 .rp_submit {
   width: 6rem;
@@ -445,7 +445,7 @@ div#register-screen .page-content {
 }
 .home_nav div div p {
   margin-top: .15rem;
-  font-size: .12rem;
+  font-size: 0.18rem;
   color: #707070;
 }
 .home_nav div div img {
@@ -464,11 +464,12 @@ div#register-screen .page-content {
   margin-bottom: .24rem;
 }
 .flash_title .title_tip {
-  font-size: .24rem;
+  font-size: 0.3rem;
   color: #1B1B1B;
 }
 .home_flash span {
-  font-size: .18rem;
+  font-size: 0.24rem;
+  vertical-align: middle;
 }
 .flash_title .flash_time span {
   background: #1B1B1B;
@@ -486,6 +487,7 @@ div#register-screen .page-content {
 .flash_more img {
   width: .32rem;
   height: .32rem;
+  vertical-align: bottom;
 }
 .flash_price {
   margin: .2rem 0 0.1rem;
@@ -503,7 +505,7 @@ div#register-screen .page-content {
   margin: .2rem 0;
 }
 .flash_banner .flash_item .item_itro p {
-  font-size: .18rem;
+  font-size: 0.24rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -511,20 +513,20 @@ div#register-screen .page-content {
 }
 .flash_banner .flash_item .item_itro .flash_price .sold_price span {
   color: #EA453D;
-  font-size: .24rem;
+  font-size: 0.3rem;
 }
 .flash_banner .flash_item .item_itro .flash_price .sold_price span:first-child {
-  font-size: .18rem;
+  font-size: 0.24rem;
 }
 .flash_banner .flash_item .item_itro .flash_price .origin_price {
   color: #8C8C8C;
-  font-size: .18rem;
+  font-size: 0.24rem;
   text-decoration: line-through;
   margin-left: .1rem;
 }
 .flash_banner .flash_item .item_itro .flash_progress span._sold {
   color: #8C8C8C;
-  font-size: .16rem;
+  font-size: 0.22rem;
 }
 .flash_banner .flash_item .item_itro .flash_progress span.progress_box {
   display: inline-block;
@@ -555,7 +557,7 @@ div#register-screen .page-content {
 }
 .home_product .title div {
   background: url('../../static/img/women_title.png') no-repeat center;
-  font-size: .24rem;
+  font-size: 0.3rem;
   color: #1B1B1B;
   font-weight: bold;
   text-align: center;
@@ -569,7 +571,7 @@ div#register-screen .page-content {
   width: .89rem;
 }
 .home_product .title p {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #1B1B1B;
   text-align: center;
   margin-top: .1rem;
@@ -591,22 +593,22 @@ div#register-screen .page-content {
   height: 2.68rem;
 }
 .product_banner .container .price {
-  margin: .2rem 0 .1rem;
+  margin: .14rem 0 .04rem;
 }
 .product_banner .container .price .sold_price span {
-  font-size: .12rem;
+  font-size: 0.18rem;
   color: #EA453D;
 }
 .product_banner .container .price .sold_price span:last-child {
-  font-size: .24rem;
+  font-size: 0.3rem;
 }
 .product_banner .container .price .origin_price {
-  font-size: .12rem;
+  font-size: 0.18rem;
   color: #8C8C8C;
   text-decoration: line-through;
 }
 .product_banner .container .pro_title {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #8C8C8C;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -614,14 +616,14 @@ div#register-screen .page-content {
 }
 .product_banner .container .good_star div {
   display: inline-block;
-  margin: .2rem 0;
+  margin: .1rem 0 .14rem;
 }
 .product_banner .container .good_star div img {
   width: .2rem;
   height: .2rem;
 }
 .product_banner .container .good_star span {
-  font-size: .14rem;
+  font-size: 0.2rem;
 }
 .home_recommend .title {
   text-align: center;
@@ -664,24 +666,24 @@ div#register-screen .page-content {
 }
 .home_recommend .re_intro .price .sold_price span {
   color: #1B1B1B;
-  font-size: .18rem;
+  font-size: 0.24rem;
 }
 .home_recommend .re_intro .price .sold_price span:last-child {
-  font-size: .24rem;
+  font-size: 0.3rem;
   font-weight: bold;
 }
 .home_recommend .re_intro .price .origin_price {
-  font-size: .18rem;
+  font-size: 0.24rem;
   text-decoration: line-through;
   color: #8C8C8C;
 }
 .home_recommend .re_intro .re_title {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #8C8C8C;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: .2rem 0;
+  margin: .14rem 0 .1rem;
 }
 .home_recommend .re_intro .re_star div {
   display: inline-block;
@@ -691,7 +693,7 @@ div#register-screen .page-content {
   height: .2rem;
 }
 .home_recommend .re_intro .re_star span {
-  font-size: .14rem;
+  font-size: 0.2rem;
 }
 .bottom {
   display: flex;
@@ -710,6 +712,7 @@ div#register-screen .page-content {
   display: inline-block;
   text-align: center;
   text-align: -webkit-center;
+  line-height: 0.2rem;
 }
 .bottom .bottom_item div {
   width: .56rem;
@@ -720,7 +723,7 @@ div#register-screen .page-content {
 }
 .bottom .bottom_item span {
   color: #707070;
-  font-size: .14rem;
+  font-size: 0.2rem;
 }
 .search_box.hs .back,
 .back {
@@ -740,7 +743,7 @@ div#register-screen .page-content {
 }
 .content.flash .title p {
   margin-top: .1rem;
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 .flash_product .title {
   background: #fff;
@@ -847,7 +850,7 @@ div#register-screen .page-content {
   line-height: .4rem;
 }
 .detail .top .pro p {
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 .nav_fixed {
   border-bottom: 1px solid #D8D8D8;
@@ -885,12 +888,12 @@ div#register-screen .page-content {
   line-height: .32rem;
 }
 .detail .intro .price .sold_price {
-  font-size: .32rem;
+  font-size: .38rem;
   color: #EA453D;
   margin-right: .1rem;
 }
 .detail .intro .price .origin_price {
-  font-size: .18rem;
+  font-size: 0.24rem;
   text-decoration: line-through;
   color: #8C8C8C;
 }
@@ -903,7 +906,7 @@ div#register-screen .page-content {
   vertical-align: sub;
 }
 .detail .intro .price .store span {
-  font-size: .2rem;
+  font-size: 0.26rem;
 }
 .detail .intro .pro_name {
   margin: .3rem 0 .2rem;
@@ -923,6 +926,7 @@ div#register-screen .page-content {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 0.26rem;
 }
 .guarancetee {
   height: .88rem;
@@ -936,6 +940,7 @@ div#register-screen .page-content {
 }
 .guarancetee span {
   color: #1B1B1B;
+  font-size: 0.26rem;
 }
 .detail .option,
 .detail .review .title,
@@ -955,13 +960,14 @@ div#register-screen .page-content {
   height: .32rem;
 }
 .detail .review .title span.view {
-  font-size: .18rem;
+  font-size: 0.24rem;
   color: #8C8C8C;
 }
 .detail .review ul {
-  padding: .3rem .24rem;
+  padding: 0 .24rem;
   box-sizing: border-box;
   background: #fff;
+  margin: 0;
 }
 .detail .review ul li {
   padding: .3rem 0;
@@ -980,7 +986,7 @@ div#register-screen .page-content {
 }
 .detail .review ul li div .user_name {
   color: #8C8C8C;
-  font-size: .18rem;
+  font-size: 0.24rem;
   margin-right: .4rem;
   display: inline-block;
   width: 2.5rem;
@@ -995,13 +1001,13 @@ div#register-screen .page-content {
   height: .24rem;
 }
 .detail .review ul li div .time {
-  font-size: .18rem;
+  font-size: 0.24rem;
   position: absolute;
   right: 0;
   top: .13rem;
 }
 .detail .review ul li p {
-  font-size: .2rem;
+  font-size: 0.26rem;
   color: #1B1B1B;
   display: -webkit-box;
   overflow: hidden;
@@ -1017,6 +1023,9 @@ div#register-screen .page-content {
 }
 .detail .home_recommend ul {
   margin-top: 0;
+}
+.detail .home_recommend ul {
+  margin-bottom: 1.4rem;
 }
 .tool_fixed {
   border-top: 1px solid #8C8C8C;
